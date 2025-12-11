@@ -3,14 +3,12 @@
 ## Introduction
 
 * [Welcome](README.md)
-* [What's New](whats-new.md)
 * [Release Notes](release-notes.md)
 
 ## Getting Started
 
 * [System Requirements](getting-started/system-requirements.md)
 * [Installation](getting-started/installation.md)
-* [Configuration](getting-started/configuration.md)
 * [Quick Start Guide](getting-started/quick-start.md)
 * [Demo Data](getting-started/demo-data.md)
 
@@ -18,12 +16,10 @@
 
 ### Dashboard
 * [Admin Dashboard](ui/admin-dashboard.md)
-* [Navigation](ui/admin-panel.md)
 
 ### Repair Management
 * [Repair Orders](features/repair-management/repair-orders.md)
 * [Order Workflow](features/repair-management/order-workflow.md)
-* [Progress Logging](features/repair-management/progress-logging.md)
 * [Technician Assignments](features/repair-management/assignments.md)
 
 ### Customer Management

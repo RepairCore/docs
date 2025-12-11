@@ -9,7 +9,7 @@ RepairCore is an enterprise-grade repair shop management system designed to stre
 ## Key Features
 
 - 🔄 Complete repair lifecycle management
-- 💰 Advanced financial management with multi-currency support
+- 💰 Advanced financial management Tax System
 - 📦 Parts & inventory control
 - 👥 Multi-user & role management
 - 📊 Rich analytics dashboard
@@ -40,8 +40,6 @@ This documentation is organized into several sections:
 ## Need Help?
 
 - 📧 Email: contact@repaircore.org
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/repaircore/issues)
-- 💬 Community: [Discord Server](https://discord.gg/repaircore)
 
 ---
 

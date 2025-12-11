@@ -12,11 +12,7 @@ After installation, navigate to your application URL:
 
 ### 2. Login to Admin Panel
 
-Use the default admin credentials (if you seeded demo data):
-- **Email:** admin@example.com
-- **Password:** password
-
-> ⚠️ **Important:** Change the default password immediately after first login!
+Use the admin credentials you entered during installation.
 
 ### 3. Configure Basic Settings
 

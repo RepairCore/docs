@@ -61,7 +61,6 @@ This file tracks which documentation files need content to be added.
 - 📝 invoicing.md
 - 📝 payment-processing.md
 - ✅ tax-management.md (Updated: Multi-tax class system, TaxClass model)
-- 📝 multi-currency.md
 - 📝 reports.md
 
 ### Features - Notifications

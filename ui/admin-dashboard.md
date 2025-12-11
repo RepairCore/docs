@@ -57,26 +57,22 @@ Click to view part details.
 
 [image_low_stock_widget]
 
-### Quick Actions
-
-Common actions available from dashboard:
-- **New Order** - Create a repair order
-- **New Customer** - Add a customer
-- **New Part** - Add inventory item
-
 ## Customizing Dashboard
 
-The dashboard layout is fixed but widgets automatically update with current data.
-
+The dashboard layout is fixed;
 ## Navigation
 
 From the dashboard, use the sidebar to navigate to:
 - **Repair Orders** - Manage orders
 - **Customers** - Manage customers
-- **Inventory** - Manage parts
+- **Parts** - Manage parts
 - **Services** - Manage services
+- **Customer Devices** - Manage devices
+- **Reports** - Generate reports
+- **Content** - Manage content
 - **Users** - Manage staff
 - **Settings** - Configure system
+- **Languages** - Manage languages
 
 ---
 

@@ -46,7 +46,13 @@
 
 ### For Production
 
-**Server Specifications**
+**Server Specifications Minimum**
+- 1+ CPU cores
+- 2GB+ RAM
+- 20GB+ disk space
+- SSD storage recommended
+
+**Server Specifications Recommended**
 - 2+ CPU cores
 - 4GB+ RAM
 - 20GB+ disk space
