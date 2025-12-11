@@ -39,7 +39,7 @@ This documentation is organized into several sections:
 
 ## Need Help?
 
-- 📧 Email: support@repaircore.com
+- 📧 Email: contact@repaircore.org
 - 🐛 Issues: [GitHub Issues](https://github.com/yourusername/repaircore/issues)
 - 💬 Community: [Discord Server](https://discord.gg/repaircore)
 

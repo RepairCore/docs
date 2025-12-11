@@ -35,7 +35,7 @@ MAIL_PORT=2525
 MAIL_USERNAME=your_username
 MAIL_PASSWORD=your_password
 MAIL_ENCRYPTION=tls
-MAIL_FROM_ADDRESS=noreply@repaircore.com
+MAIL_FROM_ADDRESS=noreply@repaircore.org
 MAIL_FROM_NAME="${APP_NAME}"
 ```
 
