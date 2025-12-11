@@ -28,165 +28,117 @@ A Tax Class defines a specific tax configuration with:
 
 Navigate to **Admin > Settings > Tax** to manage tax classes.
 
-**Creating a Tax Class:**
-1. Click "Add New" button
-2. Fill in tax class details
-3. Save
+[image_create_tax_class]
 
-**Editing a Tax Class:**
-1. Click "Edit" on the tax class row
-2. Update details (code is read-only after creation)
-3. Save
+### Tax Class Fields
 
-**Deleting a Tax Class:**
-1. Click "Delete" on the tax class row
-2. Confirm deletion
+| Field | Description | Required |
+|-------|-------------|----------|
+| **Name** | Display name (e.g., "VAT 10%") | Yes |
+| **Code** | Unique code (e.g., "VAT_10") | Yes |
+| **Rate** | Tax percentage (0-100) | Yes |
+| **Tax Inclusive** | Prices already include tax | No |
+| **Calculation Method** | Per item or subtotal | Yes |
+| **Rounding Mode** | How to round tax amounts | Yes |
+| **Status** | Active or Inactive | Yes |
 
-### Default Tax Classes
-
-You can set default tax classes for:
-- **Parts** - Applied automatically when adding parts to orders
-- **Services** - Applied automatically when adding services to orders
-
-Configure defaults in **Admin > Settings > Tax**.
-
-## Tax Calculation
+## Tax Types
 
 ### Tax Exclusive (Default)
 
-Price does not include tax. Tax is added on top.
+Prices do NOT include tax. Tax is added on top.
 
-```
-Subtotal: $100
-Tax (10%): $10
-Total: $110
-```
+**Example:**
+- Part price: 100,000
+- Tax rate: 10%
+- Tax amount: 10,000
+- Customer pays: 110,000
 
 ### Tax Inclusive
 
-Price already includes tax. Tax is extracted from the price.
+Prices already include tax. Tax is calculated from the inclusive price.
 
+**Example:**
+- Part price (inclusive): 110,000
+- Tax rate: 10%
+- Price before tax: 100,000
+- Tax amount: 10,000
+
+## Calculation Methods
+
+### Per Item
+
+Tax is calculated on each line item separately.
+
+**Example:**
 ```
-Price (incl. tax): $110
-Base Price: $100
-Tax (10%): $10
+Item 1: 100,000 × 10% = 10,000 tax
+Item 2: 200,000 × 10% = 20,000 tax
+Total Tax: 30,000
 ```
 
-### Calculation Methods
+### Subtotal
 
-**Per Item:**
-Tax is calculated for each line item, then summed.
-
-**On Subtotal:**
 Tax is calculated on the order subtotal.
 
-### Rounding Modes
-
-- **Round** - Standard rounding (default)
-- **Ceil** - Always round up
-- **Floor** - Always round down
-
-## Helper Functions
-
-### Check if Tax is Enabled
-
-```php
-if (tax_enabled()) {
-    // Tax calculations apply
-}
+**Example:**
+```
+Subtotal: 300,000
+Tax: 300,000 × 10% = 30,000
 ```
 
-### Get Default Tax Classes
+## Rounding Modes
 
-```php
-// For parts
-$taxClass = get_default_tax_class_for_parts();
+| Mode | Description | Example (10.5) |
+|------|-------------|----------------|
+| **Round** | Standard rounding | 11 |
+| **Ceiling** | Always round up | 11 |
+| **Floor** | Always round down | 10 |
 
-// For services
-$taxClass = get_default_tax_class_for_services();
-```
+## Default Tax Classes
 
-### Calculate Tax
+Set default tax classes in **Settings > Tax**:
 
-```php
-// Using a specific tax class
-$taxClass = get_tax_class($taxClassId);
-$taxAmount = $taxClass->calculateTax($amount);
+- **Default for Parts** - Applied to new parts
+- **Default for Services** - Applied to new services
 
-// Get price with tax
-$priceWithTax = $taxClass->calculatePriceWithTax($amount);
+Individual parts and services can override the default.
 
-// Get price without tax (from inclusive price)
-$priceWithoutTax = $taxClass->calculatePriceWithoutTax($amount);
-```
+[image_default_tax_classes]
 
-### Get Tax Data for Items
+## Editing a Tax Class
 
-```php
-// Returns tax details for an amount
-$taxData = get_tax_data($amount, $taxClassId, 'part');
-// Returns: ['tax_amount', 'tax_rate', 'tax_inclusive', 'tax_class_id', 'tax_class']
-```
+1. Find the tax class in the list
+2. Click **Edit**
+3. Modify the fields (Code cannot be changed)
+4. Click **Save**
 
-## TaxClass Model
+## Deleting a Tax Class
 
-Located at `App\Models\TaxClass`.
+1. Find the tax class in the list
+2. Click **Delete**
+3. Confirm deletion
 
-### Properties
+> **Warning:** Deleting a tax class may affect items that use it.
 
-| Property | Type | Description |
-|----------|------|-------------|
-| name | string | Display name |
-| code | string | Unique code |
-| description | string | Optional description |
-| rate | decimal | Tax rate percentage |
-| is_inclusive | boolean | Tax inclusive pricing |
-| calculation_method | string | 'per_item' or 'subtotal' |
-| rounding_mode | string | 'round', 'ceil', or 'floor' |
-| tax_number | string | Tax registration number |
-| status | string | 'active' or 'inactive' |
+## Toggle Status
 
-### Methods
+Click the status badge to toggle between Active and Inactive.
 
-```php
-// Get active tax classes
-TaxClass::active()->get();
+Inactive tax classes:
+- Cannot be selected for new items
+- Still apply to existing orders
 
-// Get by code
-TaxClass::byCode('VAT_STD');
+## Enable/Disable Tax
 
-// Calculate tax
-$taxClass->calculateTax($amount);
+To disable tax globally:
 
-// Apply rounding
-$taxClass->applyRounding($amount);
+1. Go to **Settings > Tax**
+2. Uncheck **Enable Tax**
+3. Save
 
-// Calculate prices
-$taxClass->calculatePriceWithTax($amount);
-$taxClass->calculatePriceWithoutTax($amount);
-```
-
-## Settings
-
-| Setting | Description |
-|---------|-------------|
-| tax_enabled | Enable/disable tax system |
-| default_tax_class_for_parts | Default tax class ID for parts |
-| default_tax_class_for_services | Default tax class ID for services |
-
-## Livewire Component
-
-Tax classes are managed via a Livewire component:
-- **Component:** `App\Http\Livewire\TaxClass\ManageTaxClasses`
-- **View:** `resources/views/livewire/tax-class/manage-tax-classes.blade.php`
-
-Features:
-- Search by name or code
-- Pagination
-- Modal form for create/edit
-- Toggle status
-- Delete with confirmation
+When disabled, no tax is calculated on any orders.
 
 ---
 
-Next: [Multi-Currency](multi-currency.md)
+Next: [Users](../user-management/users-roles.md)

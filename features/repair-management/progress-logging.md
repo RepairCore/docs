@@ -1,135 +1,118 @@
 # Progress Logging
 
-Detailed activity tracking for repair orders.
+Track work performed on repair orders.
+
+[image_progress_logs]
 
 ## Overview
 
-Progress logs provide a detailed timeline of all activities and status changes for a repair order.
+Progress logs create a timeline of all activities on a repair order. Use them to document work, communicate with customers, and track repair history.
 
-## Creating Progress Logs
+## Adding a Progress Log
 
-### Manual Logs
+1. Open a repair order
+2. Go to **Progress** tab
+3. Click **Add Log**
+4. Fill in details
+5. Click **Save**
 
-1. Open repair order
-2. Click **Add Progress Log**
-3. Fill in details:
-   - Status update
-   - Notes
-   - Photos (optional)
-   - Timestamp
-4. Save log entry
+[image_add_progress_log]
 
-### Automatic Logs
+### Log Fields
 
-System automatically creates logs for:
+| Field | Description |
+|-------|-------------|
+| **Status** | Current order status |
+| **Notes** | Description of work or update |
+| **Photos** | Attach images (optional) |
+| **Visible to Customer** | Show in customer tracking |
+
+## Automatic Logs
+
+The system automatically logs:
 - Status changes
-- Assignment changes
-- Payment received
+- Technician assignments
+- Payments received
 - Documents generated
-
-## Log Information
-
-### Fields
-
-**Status**
-- Current order status
-- Status change indicator
-
-**Notes**
-- Detailed description
-- Work performed
-- Issues found
-- Next steps
-
-**Photos**
-- Before/after photos
-- Problem documentation
-- Repair documentation
-
-**Metadata**
-- Timestamp
-- User who created log
-- Visibility (internal/customer)
 
 ## Viewing Progress Logs
 
-### In Admin Panel
+### Timeline View
 
-**Timeline View**
-- Chronological display
-- All log entries
-- Internal and customer-facing
+Open a repair order and go to **Progress** tab to see all logs in chronological order.
 
-**Filter Options**
-- By date range
-- By user
-- By status
-- Internal only
+[image_progress_timeline]
 
-### In Customer Portal
+Each entry shows:
+- Date and time
+- Status at that time
+- Notes
+- Who created it
+- Attached photos
 
-**Customer View**
-- Only customer-facing logs
-- Simplified display
-- Key updates only
+## Customer Visibility
 
-## Log Types
+### Internal Logs
 
-### Status Updates
-- Order status changed
-- Progress milestones
+Logs marked as internal are only visible to staff. Use for:
+- Technical notes
+- Internal communication
+- Sensitive information
 
-### Work Performed
-- Diagnostic results
-- Repair actions
-- Parts installed
-- Testing completed
+### Customer-Visible Logs
 
-### Communication
-- Customer contacted
-- Customer feedback
-- Special requests
-
-### Issues
-- Problems encountered
-- Delays
-- Additional work needed
+Logs marked as visible to customer appear in order tracking. Use for:
+- Status updates
+- Work completed
+- Pickup notifications
 
 ## Best Practices
 
-### For Technicians
+### Write Clear Notes
 
-1. **Log regularly** - Update after each work session
-2. **Be detailed** - Describe work performed
-3. **Add photos** - Document condition and work
-4. **Mark visibility** - Internal vs customer-facing
+**Good examples:**
+- "Replaced LCD screen. Tested touch functionality - working properly."
+- "Diagnosed motherboard issue. Ordered replacement part, ETA 2 days."
+- "Customer approved additional battery replacement."
 
-### For Managers
-
-1. **Review logs** - Monitor progress
-2. **Quality check** - Ensure proper documentation
-3. **Customer communication** - Use logs for updates
-
-### Writing Good Logs
-
-**Good Examples:**
-- "Replaced LCD screen. Tested touch functionality. All working properly."
-- "Diagnosed motherboard issue. Waiting for replacement part (ETA 2 days)."
-- "Customer approved additional repair. Starting work on battery replacement."
-
-**Bad Examples:**
+**Avoid:**
 - "Fixed it"
-- "Working on it"
 - "Done"
+- "Working on it"
 
-## Permissions
+### Add Photos
 
-Required permissions:
-- `progress-logs.view` - View logs
-- `progress-logs.create` - Create logs
-- `progress-logs.edit` - Edit logs
-- `progress-logs.delete` - Delete logs
+Document:
+- Device condition at intake
+- Problem areas
+- Before/after repair
+- Completed work
+
+### Log Regularly
+
+Update progress:
+- After each work session
+- When status changes
+- When waiting for parts
+- When contacting customer
+
+## Editing a Log
+
+1. Find the log entry
+2. Click **Edit**
+3. Modify notes or visibility
+4. Save
+
+> **Note:** Editing logs is tracked in the system.
+
+## Deleting a Log
+
+1. Find the log entry
+2. Click **Delete**
+3. Confirm deletion
+
+> **Warning:** Deleted logs cannot be recovered.
 
 ---
 
-Next: [Assignments](assignments.md)
+Next: [Technician Assignments](assignments.md)

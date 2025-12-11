@@ -1,14 +1,17 @@
-# Notification System Overview
+# Notifications
 
-RepairCore includes a comprehensive notification system for keeping users and customers informed.
+Stay informed about important events in your repair shop.
+
+[image_notifications_bell]
 
 ## Overview
 
-The notification system supports:
-- **Email notifications** - Sent via configured SMTP
-- **Database notifications** - Stored in-app notifications
-- **Customizable templates** - Edit notification content
-- **User preferences** - Users control which notifications they receive
+RepairCore sends notifications for important events like order status changes, low stock alerts, and new customer registrations.
+
+## Notification Channels
+
+- **Email** - Sent to your email address
+- **In-App** - Shown in the notification bell
 
 ## Notification Types
 
@@ -30,132 +33,46 @@ The notification system supports:
 | Assignment | Technician assigned to order |
 | New Customer | New customer registered |
 
-## Notification Templates
+## Viewing Notifications
 
-### Managing Templates
+### In-App Notifications
 
-Navigate to **Admin > Notification Templates** to customize notification content.
+Click the **bell icon** in the top right to see your notifications.
 
-**Template Fields:**
-- **Name** - Template identifier
-- **Subject** - Email subject line
-- **Body** - Notification content (supports variables)
-- **Channels** - Email, database, or both
-- **Status** - Active/inactive
-
-### Template Variables
-
-Use placeholders in templates that get replaced with actual values:
-
-```
-Hello {customer_name},
-
-Your repair order #{order_code} status has been updated to: {status}.
-
-{company_name}
-```
-
-**Available Variables:**
-- `{customer_name}` - Customer's name
-- `{order_code}` - Order code
-- `{status}` - Current status
-- `{company_name}` - Company name
-- `{company_phone}` - Company phone
-- `{tracking_url}` - Order tracking URL
-
-### Initializing Default Templates
-
-Click **Initialize Defaults** to create standard notification templates.
-
-## User Preferences
-
-### Managing Preferences
-
-Navigate to **Admin > Notification Preferences** to configure which notifications users receive.
-
-**Preference Options:**
-- Enable/disable specific notification types
-- Choose channels (email, in-app)
-- Set notification frequency
-
-### User-Level Settings
-
-Users can manage their own preferences in their profile settings.
-
-## In-App Notifications
-
-### Viewing Notifications
-
-Users see notifications via the bell icon in the admin header.
+[image_notification_dropdown]
 
 **Features:**
-- Unread count badge
+- Badge shows unread count
+- Click notification to view details
 - Mark as read
 - Mark all as read
 - Delete notifications
-- Delete all read
 
-### Routes
+### Notification List
 
-| Route | Method | Description |
-|-------|--------|-------------|
-| `admin/notifications` | GET | List notifications |
-| `admin/notifications/{id}/mark-as-read` | POST | Mark as read |
-| `admin/notifications/mark-all-read` | POST | Mark all as read |
-| `admin/notifications/{id}` | DELETE | Delete notification |
-| `admin/notifications/unread-count` | GET | Get unread count |
+Click **View All** to see all notifications in a full page.
 
-## Sending Notifications
+[image_notifications_list]
 
-### Using NotificationHelper
+## Managing Your Preferences
 
-```php
-use function send_notification;
+Control which notifications you receive:
 
-// Send notification to user
-send_notification($user, 'order_status_changed', [
-    'order' => $order,
-    'status' => $newStatus,
-]);
-```
+1. Go to your **Profile**
+2. Click **Notification Preferences**
+3. Toggle notifications on/off
+4. Choose channels (email, in-app)
+5. Save
 
-### Using Laravel Notifications
+[image_notification_preferences]
 
-```php
-use App\Notifications\OrderStatusChanged;
+### Available Settings
 
-$user->notify(new OrderStatusChanged($order));
-```
-
-## Models
-
-### NotificationTemplate
-
-Located at `App\Models\NotificationTemplate`.
-
-**Fields:**
-- name, slug
-- subject, body
-- channels (json)
-- variables (json)
-- status
-
-### NotificationPreference
-
-Located at `App\Models\NotificationPreference`.
-
-**Fields:**
-- user_id
-- notification_type
-- email_enabled
-- database_enabled
-
-## Controllers
-
-- `NotificationController` - In-app notification management
-- `NotificationTemplateController` - Template CRUD
-- `NotificationPreferenceController` - User preferences
+For each notification type, you can:
+- **Enable/Disable** - Turn the notification on or off
+- **Email** - Receive via email
+- **In-App** - Show in notification bell
 
 ---
 
-Next: [Email Notifications](email.md)
+Next: [Notification Templates](templates.md)

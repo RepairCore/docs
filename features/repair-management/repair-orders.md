@@ -2,190 +2,194 @@
 
 Complete guide to managing repair orders in RepairCore.
 
+[image_repair_orders_list]
+
 ## Overview
 
-Repair orders are the core entity in RepairCore, tracking the entire lifecycle of a repair from intake to delivery. The repair order system is built with Livewire components for a reactive, seamless editing experience.
+Repair orders track the entire lifecycle of a repair from customer intake to final delivery. Each order contains customer information, device details, parts used, services performed, and payment records.
+
+## Viewing Repair Orders
+
+Navigate to **Admin > Repair Orders** to see all orders.
+
+[image_repair_orders_index]
+
+### List Features
+
+- **Search** - Find orders by code, customer name, or device
+- **Filter** - Filter by status, date range, technician
+- **Sort** - Sort by date, status, customer
+- **Bulk Actions** - Change status or delete multiple orders
 
 ## Creating a Repair Order
 
-### From Admin Panel
-
 1. Navigate to **Admin > Repair Orders**
 2. Click **Create New Order**
-3. The Livewire-based form opens with multiple sections
-4. Fill in required information across tabs
-5. Save the order
+3. Fill in the order information
+4. Click **Save**
 
-### Order Form Sections
+[image_create_repair_order]
 
-The repair order form is organized into tabbed sections, each managed by a Livewire component:
+### Step 1: Customer & Device
 
-| Section | Component | Description |
-|---------|-----------|-------------|
-| Customer & Device | CustomerDeviceSection | Select/create customer and device |
-| Parts & Services | PartsServicesSection | Add parts and services with pricing |
-| Status | StatusSection | Manage order status |
-| Assignment | AssignmentSection | Assign technicians |
-| Diagnostic | DiagnosticSection | Diagnostic notes and findings |
-| Payment | PaymentSection | Record payments |
-| Delivery | DeliverySection | Delivery information |
-| Labels | LabelsSection | Assign workflow labels |
-| Progress | RepairProgressSection | Progress log entries |
-| Warranty | WarrantySection | Warranty information |
+Select or create a customer and their device:
+
+1. **Search Customer** - Type customer name or phone
+2. **Create New** - Click to add new customer if not found
+3. **Select Device** - Choose from customer's devices or add new
+
+[image_customer_device_section]
+
+### Step 2: Problem Description
+
+Enter the reported problem:
+- **Problem Description** - What the customer reported
+- **Condition Notes** - Device condition at intake
+- **Priority** - Low, Normal, High, or Urgent
+
+### Step 3: Add Parts & Services
+
+Add parts and services to the order:
+
+**Adding Parts:**
+1. Click **Add Part**
+2. Search for part by name or SKU
+3. Enter quantity
+4. Part is added with price and tax
+
+**Adding Services:**
+1. Click **Add Service**
+2. Search for service
+3. Adjust price if needed
+
+[image_parts_services_section]
+
+### Step 4: Save Order
+
+Click **Save** to create the order. An order code is automatically generated.
 
 ## Order Statuses
 
-- **Draft** - Order being created
-- **Pending** - Awaiting approval/diagnosis
-- **In Progress** - Repair in progress
-- **Waiting Parts** - Waiting for parts
-- **Completed** - Repair finished
-- **Delivered** - Returned to customer
-- **Cancelled** - Order cancelled
+| Status | Description |
+|--------|-------------|
+| **Draft** | Order being created |
+| **Pending** | Awaiting diagnosis or approval |
+| **In Progress** | Repair work in progress |
+| **Waiting Parts** | Waiting for parts to arrive |
+| **Completed** | Repair finished |
+| **Delivered** | Device returned to customer |
+| **Cancelled** | Order cancelled |
 
-## Order Fields
+[image_order_status_flow]
 
-### Basic Information
-- **Order code** - Auto-generated unique code (e.g., RO-20241211-0001)
-- **Customer** - Linked customer record
-- **Device** - Device being repaired
-- **Status** - Current order status
-- **Priority** - Low, Normal, High, Urgent
+### Changing Status
 
-### Financial Information
-- **Subtotal** - Sum of parts and services
-- **Tax** - Calculated based on tax classes
-- **Discount** - Applied discount amount
-- **Total** - Final amount
-- **Paid amount** - Total payments received
-- **Balance** - Remaining amount due
+1. Open the repair order
+2. Go to **Status** tab
+3. Select new status
+4. Add notes (optional)
+5. Click **Update Status**
 
-### Dates
-- **Created date** - Order creation timestamp
-- **Expected completion** - Estimated completion date
-- **Actual completion** - When repair was completed
-- **Delivery date** - When delivered to customer
+## Order Tabs
 
-### Warranty Information
-- **Warranty months** - Warranty period
-- **Warranty expires at** - Calculated expiry date
-- **Warranty notes** - Additional warranty terms
-- **Warranty number** - Generated warranty certificate number
+### Customer & Device
 
-### Additional Information
-- **Notes** - Customer-visible notes
-- **Internal notes** - Staff-only notes
-- **Custom fields** - Via metadata system (HasMeta trait)
+View and edit customer and device information.
 
-## Parts & Services Management
+### Parts & Services
 
-### Adding Parts
+Manage parts and services on the order:
+- Add/remove items
+- Adjust quantities
+- View pricing and tax
 
-Parts are added through the PartsServicesSection component:
-1. Search for part by name or SKU
-2. Select quantity
-3. Part is added with automatic stock deduction
-4. Tax is calculated based on part's tax class
+### Status
 
-**Stock Management:**
-- Stock is automatically deducted when parts are added
-- Stock is returned when parts are removed
-- Backorder support when stock is insufficient
+Change order status and view status history.
 
-### Adding Services
+### Assignment
 
-1. Search for service
-2. Adjust price if needed
-3. Service is added with tax calculation
+Assign technicians to work on the order:
+1. Click **Assign Technician**
+2. Select technician from list
+3. Add notes (optional)
 
-## Progress Logging
+[image_assignment_section]
 
-Track repair progress with detailed logs:
+### Diagnostic
 
-1. Navigate to **Progress** tab
-2. Click **Add Progress Log**
-3. Enter:
-   - Status update
-   - Description of work done
-   - Time spent (optional)
-   - Attach photos (optional)
-4. Save log entry
+Record diagnostic findings:
+- Problem diagnosis
+- Recommended repairs
+- Estimated cost
 
-Progress logs create a timeline of the repair process.
+### Payment
 
-## Document Generation
+Record customer payments:
+1. Click **Add Payment**
+2. Enter amount
+3. Select payment method
+4. Add notes (optional)
 
-Generate professional documents from repair orders:
+[image_payment_section]
 
-### Available Documents
+### Delivery
 
-| Document | Route | Description |
-|----------|-------|-------------|
-| Quotation | `repair-orders/{id}/quotation` | Price quote for customer |
-| Invoice | `repair-orders/{id}/invoice` | Final invoice |
-| Receipt | `repair-orders/{id}/receipt` | Payment receipt |
-| Warranty | `repair-orders/{id}/warranty` | Warranty certificate |
+Record delivery information:
+- Delivery date
+- Received by
+- Delivery notes
 
-### Generating Documents
+### Labels
 
-1. Open repair order
-2. Click document button (Quotation, Invoice, Receipt, Warranty)
-3. PDF is generated and displayed
-4. Download or print
+Assign labels to organize orders:
+- Click to add/remove labels
+- Labels help filter and categorize orders
 
-## Permissions
+### Progress
 
-The RepairOrderPermissions trait provides granular permission checking:
+View and add progress log entries:
+1. Click **Add Progress**
+2. Enter description of work done
+3. Add time spent (optional)
+4. Attach photos (optional)
 
-| Permission | Description |
-|------------|-------------|
-| `repair-orders.view` | View orders |
-| `repair-orders.create` | Create orders |
-| `repair-orders.edit` | Edit orders |
-| `repair-orders.delete` | Delete orders |
-| `repair-orders.change-status` | Change order status |
-| `repair-orders.assign` | Assign technicians |
-| `repair-orders.add-payment` | Record payments |
+[image_progress_section]
 
-### Permission Methods
+### Warranty
 
-```php
-$order->canViewOrder($user);
-$order->canEditOrder($user);
-$order->canDeleteOrder($user);
-$order->canChangeStatus($user);
-$order->canAssign($user);
-$order->canAddPayment($user);
-```
+Configure warranty for the order:
+- Warranty period (months)
+- Warranty notes
+- View warranty expiry date
 
-## Routes
+## Generating Documents
 
-| Route | Method | Description |
-|-------|--------|-------------|
-| `admin/repair-orders` | GET | List orders |
-| `admin/repair-orders/create` | GET | Create form (Livewire) |
-| `admin/repair-orders/{id}` | GET | View order |
-| `admin/repair-orders/{id}/edit` | GET | Edit form (Livewire) |
-| `admin/repair-orders/{id}` | DELETE | Delete order |
+Generate professional documents from orders:
 
-## Model
+| Document | Description |
+|----------|-------------|
+| **Quotation** | Price quote for customer approval |
+| **Invoice** | Final invoice with all charges |
+| **Receipt** | Payment receipt |
+| **Warranty** | Warranty certificate |
 
-Located at `App\Models\RepairOrder`.
+[image_document_buttons]
 
-### Traits Used
-- **SoftDeletes** - Soft delete support
-- **HasMeta** - Key-value metadata
-- **HasSafeCode** - Unique code generation
-- **ManagesPartStock** - Stock management for parts
-- **RepairOrderPermissions** - Permission checking
+### How to Generate
 
-### Relationships
-- `customer()` - Customer record
-- `device()` - Device being repaired
-- `items()` - Repair items (parts/services)
-- `assignments()` - Technician assignments
-- `progressLogs()` - Progress log entries
-- `labels()` - Assigned labels
+1. Open the repair order
+2. Click the document button (Quotation, Invoice, etc.)
+3. PDF opens in new tab
+4. Print or download
+
+## Deleting Orders
+
+1. Open the repair order
+2. Click **Delete** button
+3. Confirm deletion
+
+> **Note:** Deleted orders are soft-deleted and can be restored if needed.
 
 ---
 

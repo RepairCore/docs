@@ -1,20 +1,122 @@
 # Customer Profiles
 
-Managing customer information and profiles.
+Manage customer information and their devices.
 
-## Overview
+[image_customers_list]
 
-Customer profiles store all information about your customers, including contact details, repair history, and preferences.
+## Viewing Customers
 
-## Content
+Navigate to **Admin > Customers** to see all customers.
 
-Documentation content will be added here covering:
-- Creating customer profiles
-- Managing customer information
-- Customer history
-- Custom fields
-- Communication preferences
+### List Features
+
+- **Search** - Find by name, phone, or email
+- **Filter** - Filter by status
+- **Sort** - Sort by name, date, orders count
+- **Bulk Actions** - Delete multiple customers
+
+## Creating a Customer
+
+1. Navigate to **Admin > Customers**
+2. Click **Create Customer**
+3. Fill in customer details
+4. Click **Save**
+
+[image_create_customer]
+
+### Customer Fields
+
+| Field | Description | Required |
+|-------|-------------|----------|
+| **Name** | Customer's full name | Yes |
+| **Email** | Email address | No |
+| **Phone** | Phone number | No |
+| **Address** | Street address | No |
+| **City** | City | No |
+| **Notes** | Internal notes | No |
+
+> **Tip:** At least one contact method (email or phone) is recommended.
+
+## Editing a Customer
+
+1. Find the customer in the list
+2. Click **Edit** or the customer name
+3. Modify the information
+4. Click **Save**
+
+## Customer Details Page
+
+Click a customer name to view their profile:
+
+[image_customer_detail]
+
+### Overview Tab
+
+- Customer information
+- Contact details
+- Total orders count
+- Total spent
+
+### Devices Tab
+
+View all devices registered to this customer:
+- Device name/model
+- Serial number
+- Last repair date
+
+[image_customer_devices]
+
+### Orders Tab
+
+View all repair orders for this customer:
+- Order code
+- Device
+- Status
+- Date
+- Amount
+
+Click an order to view details.
+
+### Notes Tab
+
+Internal notes about the customer (not visible to customer).
+
+## Managing Customer Devices
+
+### Adding a Device
+
+1. Open customer profile
+2. Go to **Devices** tab
+3. Click **Add Device**
+4. Fill in device details
+5. Click **Save**
+
+### Device Fields
+
+| Field | Description |
+|-------|-------------|
+| **Device Type** | Category (Phone, Laptop, etc.) |
+| **Brand** | Manufacturer |
+| **Model** | Model name/number |
+| **Serial Number** | Device serial or IMEI |
+| **Color** | Device color |
+| **Notes** | Additional notes |
+
+## Deleting a Customer
+
+1. Open customer profile
+2. Click **Delete** button
+3. Confirm deletion
+
+> **Warning:** Deleting a customer also removes their devices. Repair order history is preserved.
+
+## Quick Customer Creation
+
+When creating a repair order, you can create a new customer inline:
+1. In the Customer field, click **Create New**
+2. Enter customer details
+3. Customer is created and selected
 
 ---
 
-Next: [Customer Portal](customer-portal.md)
+Next: [Devices](../device-management/device-catalog.md)

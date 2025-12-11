@@ -1,212 +1,141 @@
 # Stock Management
 
-RepairCore provides comprehensive stock management with automatic tracking, backorder support, and detailed logging.
+Track and manage your parts inventory.
+
+[image_stock_management]
 
 ## Overview
 
-The stock management system:
-- Tracks stock levels for all parts
-- Automatically deducts stock when parts are added to repair orders
-- Returns stock when parts are removed or orders are cancelled
-- Supports backorder functionality
-- Maintains detailed stock movement logs
+Stock management tracks the quantity of each part in your inventory. The system automatically adjusts stock when parts are used in repair orders.
 
-## Stock Tracking
+## Key Features
 
-### Part Stock Fields
+- **Automatic Stock Tracking** - Stock is deducted when parts are added to orders
+- **Stock History** - Complete history of all stock movements
+- **Backorder Support** - Allow orders even when stock is insufficient
+- **Low Stock Alerts** - Warnings when stock falls below threshold
 
-Each part has the following stock-related fields:
-- **quantity_in_stock** - Current available stock
-- **low_stock_threshold** - Alert threshold for low stock
-- **reorder_quantity** - Suggested reorder amount
+## Viewing Stock
 
-### Stock Adjustments
+### On Parts List
 
-Stock can be adjusted through:
-1. **Repair Orders** - Automatic deduction/return
-2. **Manual Adjustment** - Admin manual changes
-3. **Initial Stock** - Setting initial inventory
+The parts list shows current stock for each part:
+- Green: Stock is healthy
+- Yellow: Stock is low (at or below threshold)
+- Red: Out of stock
 
-## Stock Logs
+[image_parts_stock_status]
 
-All stock movements are recorded in the `stock_logs` table.
+### On Part Details
 
-### Log Entry Fields
+Open a part to see detailed stock information:
+- Current stock quantity
+- Low stock threshold
+- Stock history
 
-| Field | Description |
-|-------|-------------|
-| part_id | The part being adjusted |
-| quantity_change | Amount changed (+/-) |
-| quantity_before | Stock before change |
-| quantity_after | Stock after change |
-| reason | Reason code |
-| ref_id | Reference ID (e.g., repair_item_id) |
-| parent_ref_id | Parent reference (e.g., repair_order_id) |
-| description | Human-readable description |
-| created_by | User who made the change |
+## Stock Adjustments
 
-### Reason Codes
+### Automatic Adjustments
 
-| Code | Description |
+Stock is automatically adjusted when:
+- **Part added to order** - Stock is deducted
+- **Part removed from order** - Stock is returned
+- **Order cancelled** - All parts stock is returned
+
+### Manual Adjustments
+
+To manually adjust stock:
+
+1. Open the part details
+2. Click **Adjust Stock**
+3. Enter quantity:
+   - Positive number to add stock (e.g., +10)
+   - Negative number to subtract (e.g., -5)
+4. Enter reason for adjustment
+5. Click **Save**
+
+[image_manual_stock_adjustment]
+
+## Stock History
+
+View all stock movements for a part:
+
+1. Open part details
+2. Go to **Stock History** tab
+
+Each entry shows:
+- Date and time
+- Quantity change (+/-)
+- Reason for change
+- Related order (if applicable)
+- Notes
+
+[image_stock_history_tab]
+
+### Movement Types
+
+| Type | Description |
 |------|-------------|
-| initial_stock | Initial stock setup |
-| manual_adjustment | Manual admin adjustment |
-| repair_item_add | Part added to repair order |
-| repair_item_remove | Part removed from repair order |
-| repair_item_update | Part quantity updated |
-| order_cancel | Order cancelled, stock returned |
-| backorder_fulfill | Backorder fulfilled |
+| **Initial** | Initial stock when part was created |
+| **Order** | Added to or removed from repair order |
+| **Cancelled** | Returned due to order cancellation |
+| **Manual** | Manual adjustment by staff |
 
-## Backorder Support
+## Backorder
 
-When stock is insufficient, RepairCore can handle backorders.
+When stock is insufficient but backorder is enabled:
 
-### Settings
+### How It Works
 
-Configure in **Admin > Settings > Inventory**:
-- **allow_backorder** - Enable/disable backorder functionality
+1. Part has 5 in stock, order needs 8
+2. System deducts available 5 (stock becomes 0)
+3. Remaining 3 is marked as backorder
+4. Order shows backorder indicator
 
-### How Backorders Work
+### Enabling Backorder
 
-1. Part added to order with quantity > available stock
-2. Available stock is deducted immediately
-3. Remaining quantity is marked as backorder
-4. When stock arrives, backorders can be fulfilled
+1. Go to **Settings > Inventory**
+2. Enable **Allow Backorder**
+3. Save settings
 
-### Fulfilling Backorders
+### Viewing Backorders
 
-1. Navigate to **Admin > Parts > [Part] > Backorders**
-2. Select orders to fulfill
-3. Click "Fulfill Selected"
-4. Stock is deducted and backorder quantities updated
+Orders with backorders show a warning indicator. View backorder quantity on the order's parts list.
 
-## HasStockManagement Trait
+[image_backorder_indicator]
 
-Located at `App\Traits\HasStockManagement`. Used by the Part model.
+## Low Stock Alerts
 
-### Methods
+### Setting Threshold
 
-```php
-// Adjust stock with logging
-$part->adjustStock($amount, $reason, $refId, $parentRefId, $description);
+Each part can have its own low stock threshold:
 
-// Deduct stock for repair
-$part->deductStockForRepair($quantity, $repairItemId, $repairOrderId, $description);
+1. Edit the part
+2. Set **Low Stock Threshold** (e.g., 5)
+3. Save
 
-// Return stock from repair
-$part->returnStockFromRepair($quantity, $repairItemId, $repairOrderId, $reason, $description);
+When stock falls to or below this level, the part is flagged.
 
-// Set initial stock
-$part->setInitialStock($quantity, $description);
+### Default Threshold
 
-// Manual adjustment
-$part->manualAdjustment($amount, $description);
+Set a default threshold for new parts in **Settings > Inventory**.
 
-// Check stock availability
-$part->hasStock($quantity);
+### Viewing Low Stock
 
-// Check if backorder allowed
-Part::isBackorderAllowed();
+Low stock parts appear:
+- On the dashboard widget
+- In the parts list (filtered)
+- With warning indicators
 
-// Calculate backorder quantity
-$part->calculateBackorderQty($requestedQty);
+[image_low_stock_alert]
 
-// Check if can fulfill order
-$part->canFulfillOrder($quantity);
+## Best Practices
 
-// Get available for order
-$part->getAvailableForOrder($requestedQty);
-
-// Fulfill backorders for selected items
-$part->fulfillBackorders($repairItemIds);
-```
-
-## ManagesPartStock Trait
-
-Located at `App\Traits\ManagesPartStock`. Used by the RepairOrder model.
-
-### Methods
-
-```php
-// Add part with automatic stock management
-$result = $order->addPartWithStock($part, $quantity, $attributes);
-// Returns: ['success' => bool, 'message' => string, 'repair_item' => RepairItem|null]
-
-// Remove part and return stock
-$result = $order->removePartWithStock($repairItem);
-
-// Update part quantity with stock adjustment
-$result = $order->updatePartQuantityWithStock($repairItem, $newQuantity);
-
-// Return all stock (for order cancellation)
-$order->returnAllPartStock($reason, $statusLabel);
-
-// Check if order has backordered items
-$order->hasBackorderedItems();
-
-// Get total backorder quantity
-$order->getTotalBackorderQty();
-```
-
-## Usage Examples
-
-### Adding Part to Order
-
-```php
-$result = $order->addPartWithStock($part, 2, [
-    'description' => 'Screen replacement',
-    'unit_price' => 150000,
-]);
-
-if (!$result['success']) {
-    // Handle error
-    session()->flash('error', $result['message']);
-}
-```
-
-### Cancelling Order
-
-```php
-// Return all stock when cancelling
-$order->returnAllPartStock(
-    StockLog::REASON_ORDER_CANCEL,
-    __('Order Cancelled')
-);
-```
-
-### Manual Stock Adjustment
-
-```php
-// Add stock
-$part->manualAdjustment(10, 'Received from supplier');
-
-// Remove stock
-$part->manualAdjustment(-5, 'Damaged items removed');
-```
-
-## Stock Reports
-
-Navigate to **Admin > Reports > Inventory** for:
-- Current stock levels
-- Low stock alerts
-- Stock movement history
-- Export to Excel/CSV
-
-### Report Features
-
-- Filter by part category, brand
-- Date range for movements
-- Export stock logs
-- View backorder status
-
-## Settings
-
-| Setting | Description |
-|---------|-------------|
-| allow_backorder | Allow orders when stock insufficient |
-| low_stock_notification | Send alerts for low stock |
-| stock_tracking_enabled | Enable/disable stock tracking |
+1. **Set thresholds** - Configure low stock thresholds for important parts
+2. **Regular audits** - Periodically verify physical stock matches system
+3. **Use adjustments** - Record all stock changes with reasons
+4. **Monitor backorders** - Fulfill backorders promptly
 
 ---
 
-Next: [Parts Catalog](parts-catalog.md)
+Next: [Service Catalog](../service-management/service-catalog.md)

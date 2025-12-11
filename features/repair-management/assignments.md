@@ -1,153 +1,87 @@
-# Assignments
+# Technician Assignments
 
-Technician assignment and workload management.
+Assign repair orders to technicians.
+
+[image_assignments]
 
 ## Overview
 
-The assignment system allows managers to assign repair orders to technicians and track workload distribution.
+Assign orders to technicians to distribute work and track who is responsible for each repair.
 
-## Assigning Orders
+## Assigning an Order
 
-### Manual Assignment
-
-1. Open repair order
-2. Click **Assign Technician**
-3. Select technician from dropdown
-4. Set priority (optional)
-5. Add notes (optional)
-6. Save assignment
-
-### Bulk Assignment
-
-1. Select multiple orders (checkbox)
-2. Click **Bulk Actions**
-3. Select **Assign to Technician**
-4. Choose technician
-5. Confirm assignment
-
-### Auto-Assignment
-
-Configure rules for automatic assignment:
-- Based on technician skills
-- Based on current workload
-- Based on availability
-- Round-robin distribution
-
-## Assignment Information
-
-### Fields
-
-**Technician**
-- User assigned to order
-- Must have technician role
-
-**Priority**
-- Low, Normal, High, Urgent
-- Affects order in queue
-
-**Expected Completion**
-- Estimated completion date
-- Based on workload and complexity
-
-**Notes**
-- Special instructions
-- Customer requests
-- Technical requirements
-
-## Workload Management
-
-### Technician Dashboard
-
-Each technician sees:
-- Assigned orders
-- Priority queue
-- Completion deadlines
-- Workload summary
-
-### Manager Dashboard
-
-Managers can view:
-- All assignments
-- Workload by technician
-- Overdue orders
-- Capacity planning
-
-## Reassignment
-
-### Changing Assignment
-
-1. Open order
-2. Click **Reassign**
-3. Select new technician
-4. Add reason for reassignment
+1. Open a repair order
+2. Go to order details
+3. Click **Assign Technician** dropdown
+4. Select a technician
 5. Save
 
-### Automatic Reassignment
+[image_assign_technician]
 
-System can automatically reassign when:
-- Technician unavailable
-- Workload too high
-- Skills mismatch
-- Priority escalation
+## Viewing Assignments
+
+### On Order List
+
+The orders list shows the assigned technician for each order. Filter by technician to see their workload.
+
+### On Order Details
+
+Open an order to see who is assigned and assignment history.
+
+## Reassigning an Order
+
+1. Open the repair order
+2. Click the technician dropdown
+3. Select a different technician
+4. Save
+
+> **Note:** Reassignment is logged in the order history.
+
+## Priority
+
+Set order priority to help technicians prioritize work:
+
+| Priority | Description |
+|----------|-------------|
+| **Low** | Can wait, no rush |
+| **Normal** | Standard priority |
+| **High** | Should be done soon |
+| **Urgent** | Needs immediate attention |
+
+[image_priority_dropdown]
 
 ## Notifications
 
-### Technician Notifications
+When assigned, technicians receive:
+- In-app notification
+- Email notification (if enabled)
 
-Notified when:
-- New order assigned
-- Priority changed
-- Deadline approaching
-- Customer inquiry
+## Workload View
 
-### Manager Notifications
+See how many orders each technician has:
 
-Notified when:
-- Order overdue
-- Technician requests help
-- Assignment conflicts
-- Workload imbalance
+1. Go to **Repair Orders**
+2. Use the technician filter
+3. View count per technician
 
-## Workload Metrics
-
-### Per Technician
-
-- Active orders count
-- Completed orders (period)
-- Average completion time
-- Customer satisfaction
-
-### Team Metrics
-
-- Total active orders
-- Distribution balance
-- Bottlenecks
-- Capacity utilization
+[image_workload_view]
 
 ## Best Practices
 
 ### For Managers
 
-1. **Balance workload** - Distribute evenly
-2. **Consider skills** - Match expertise to job
-3. **Monitor deadlines** - Prevent overdue orders
-4. **Communicate** - Keep technicians informed
+- **Balance workload** - Distribute orders evenly
+- **Consider expertise** - Match skills to repair type
+- **Monitor progress** - Check for overdue orders
+- **Communicate** - Inform about priority changes
 
 ### For Technicians
 
-1. **Update status** - Keep orders current
-2. **Request help** - When needed
-3. **Manage time** - Prioritize effectively
-4. **Communicate delays** - Early notification
-
-## Permissions
-
-Required permissions:
-- `assignments.view` - View assignments
-- `assignments.create` - Create assignments
-- `assignments.edit` - Edit assignments
-- `assignments.delete` - Delete assignments
+- **Check assignments** - Review your queue daily
+- **Update status** - Keep orders current
+- **Log progress** - Document work performed
+- **Communicate delays** - Notify early if issues arise
 
 ---
 
-Next: [Customer Management](../customer-management/customer-profiles.md)
+Next: [Customer Profiles](../customer-management/customer-profiles.md)

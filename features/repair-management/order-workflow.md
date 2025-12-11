@@ -1,104 +1,104 @@
 # Order Workflow
 
-Understanding the repair order lifecycle and workflow.
+Understanding the repair order lifecycle.
 
-## Standard Workflow
+[image_order_workflow]
+
+## Overview
+
+A repair order goes through several stages from intake to delivery. Understanding this workflow helps you manage repairs efficiently.
+
+## Workflow Stages
 
 ### 1. Intake
-- Customer brings device
-- Staff creates order
-- Document device condition
-- Capture problem description
+
+When a customer brings a device:
+1. Create a new repair order
+2. Select or create customer
+3. Add device information
+4. Document the problem
+5. Note device condition
+
+[image_intake_stage]
 
 ### 2. Diagnostic
-- Technician examines device
-- Document findings
-- Identify required parts/services
-- Estimate repair time
 
-### 3. Quote Generation
-- System calculates costs
-- Parts + Services + Tax
-- Generate quote document
-- Send to customer
+Examine the device:
+1. Assign to technician
+2. Diagnose the problem
+3. Identify required parts/services
+4. Estimate repair time
+5. Add progress log
 
-### 4. Customer Approval
-- Customer reviews quote
-- Approves or declines
-- Via email link or in-person
+### 3. Quote & Approval
 
-### 5. Assignment
-- Order assigned to technician
-- Priority set
-- Expected completion date
+Get customer approval:
+1. Add parts and services to order
+2. System calculates total with tax
+3. Generate quote document
+4. Send to customer
+5. Wait for approval
 
-### 6. Repair
-- Technician performs repair
-- Log progress updates
-- Update status
-- Document work performed
+### 4. Repair
 
-### 7. Quality Check
-- Supervisor reviews work
-- Test device functionality
-- Verify repair quality
-- Approve or request rework
+Perform the repair:
+1. Change status to "In Progress"
+2. Use required parts (stock deducted)
+3. Perform services
+4. Log progress regularly
+5. Update status as work progresses
 
-### 8. Payment
-- Generate invoice
-- Customer pays
-- Record payment
-- Update order status
+[image_repair_stage]
 
-### 9. Delivery
-- Notify customer
-- Schedule pickup
-- Deliver device
-- Get customer signature
+### 5. Quality Check
 
-### 10. Follow-up
-- Send satisfaction survey
-- Request review
-- Warranty information
+Verify the repair:
+1. Test device functionality
+2. Ensure repair quality
+3. Document completion
+4. Change status to "Completed"
 
-## Custom Workflows
+### 6. Payment & Delivery
 
-### Express Repair
-- Skip diagnostic
-- Pre-approved services
-- Same-day completion
+Complete the order:
+1. Generate invoice
+2. Record payment
+3. Notify customer
+4. Deliver device
+5. Change status to "Delivered"
 
-### Mail-in Repair
-- Customer ships device
-- Remote communication
-- Ship back when complete
+## Order Statuses
 
-### Warranty Repair
-- Verify warranty status
-- No payment required
-- Special handling
+| Status | Description |
+|--------|-------------|
+| **Draft** | Order created, not yet submitted |
+| **Pending** | Awaiting diagnostic or approval |
+| **Approved** | Customer approved, ready for repair |
+| **In Progress** | Repair work underway |
+| **Completed** | Repair finished, awaiting payment/pickup |
+| **Delivered** | Device returned to customer |
+| **Cancelled** | Order cancelled |
 
-## Status Transitions
+[image_status_flow]
 
-```
-Draft → Pending → Approved → In Progress → Quality Check → Completed → Delivered
-                     ↓
-                 Cancelled
-```
+## Changing Status
 
-## Automation
+1. Open the repair order
+2. Click the status dropdown
+3. Select new status
+4. Add notes if needed
+5. Save
 
-### Automatic Notifications
-- Status changes
-- Payment reminders
-- Completion notifications
-- Delivery ready alerts
+> **Note:** Status changes are logged and may trigger notifications.
 
-### Automatic Actions
-- Status updates based on events
-- Assignment based on workload
-- Priority escalation
+## Tips for Efficient Workflow
+
+1. **Document everything** - Add photos and detailed notes
+2. **Update status promptly** - Keep customers informed
+3. **Log progress** - Track work performed
+4. **Use assignments** - Distribute work among technicians
+5. **Set priorities** - Handle urgent repairs first
 
 ---
 
-Next: [Order Tracking](order-tracking.md)
+Next: [Progress Logging](progress-logging.md)
