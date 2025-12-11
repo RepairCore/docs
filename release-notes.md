@@ -14,13 +14,10 @@ First stable release of RepairCore - Professional Repair Shop Management System.
 - Customer portal and order tracking
 - Parts and inventory management
 - Service catalog
-- Financial management with multi-currency
+- Financial management
 - Tax management system
-- Notification system
 - Blog and content management
 - User management with roles and permissions
-- Social authentication
-- Media library
 - Settings management
 
 ### Technical Stack
@@ -30,6 +27,7 @@ First stable release of RepairCore - Professional Repair Shop Management System.
 - Bootstrap 5.3
 - Alpine.js
 - Vite 7
+- Tailwind CSS 4
 
 ### Database
 - MySQL 8.0+ / PostgreSQL 13+ support

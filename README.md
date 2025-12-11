@@ -9,12 +9,14 @@ RepairCore is an enterprise-grade repair shop management system designed to stre
 ## Key Features
 
 - 🔄 Complete repair lifecycle management
-- 💰 Advanced financial management Tax System
+- 💰 Advanced financial management with Tax System
 - 📦 Parts & inventory control
 - 👥 Multi-user & role management
 - 📊 Rich analytics dashboard
-- 🔔 Smart notification system
 - 📄 Professional document generation
+- 📚 Localization
+- 📦 CMS management
+- 📦 Customer portal
 
 ## Technology Stack
 
@@ -27,15 +29,6 @@ RepairCore is an enterprise-grade repair shop management system designed to stre
 
 New to RepairCore? Start with our [Installation Guide](getting-started/installation.md) to get up and running quickly.
 
-## Documentation Structure
-
-This documentation is organized into several sections:
-
-- **Getting Started** - Installation, configuration, and quick start guides
-- **Core Concepts** - Understanding RepairCore's architecture and design
-- **Features** - Detailed guides for each module and feature
-- **Development** - Developer guides, API reference, and customization
-- **Deployment** - Production deployment and maintenance guides
 
 ## Need Help?
 

@@ -48,10 +48,6 @@ Before going live, you may want to remove demo data:
 
 > **Tip:** Keep the default roles and permissions - they provide a good starting point for your team structure.
 
-## Starting Fresh
-
-If you prefer to start without demo data, you can skip the demo seeder during installation.
-
 ---
 
 Next: [Admin Dashboard](../ui/admin-dashboard.md)
