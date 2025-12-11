@@ -4,12 +4,11 @@ Welcome to the official documentation for **RepairCore** - a professional repair
 
 ## What is RepairCore?
 
-RepairCore is an enterprise-grade repair shop management system designed to streamline operations from customer intake to final delivery. It features powerful automation, real-time tracking, and comprehensive reporting capabilities.
+RepairCore is an enterprise-grade repair shop management system designed to streamline operations from customer intake to final delivery. It features powerful automation, and comprehensive reporting capabilities.
 
 ## Key Features
 
 - 🔄 Complete repair lifecycle management
-- 📱 Real-time order tracking for customers
 - 💰 Advanced financial management with multi-currency support
 - 📦 Parts & inventory control
 - 👥 Multi-user & role management

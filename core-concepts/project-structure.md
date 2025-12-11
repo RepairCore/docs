@@ -108,14 +108,17 @@ Controllers handle HTTP requests and return responses.
 
 Livewire components for reactive UI.
 
-**Namespace:** `App\Http\Livewire\`
+**Namespace:** `App\Http\Livewire\` (NOT the default `App\Livewire\`)
 
-**Admin Components** (`/Admin`)
-- Admin panel interactive components
+**Component Folders:**
+- `Device/` - Device-related components
+- `Frontend/` - Customer-facing full-page components
+- `Installer/` - Installation wizard
+- `Part/` - Part management (backorders, etc.)
+- `RepairOrder/` - Repair order sections (11 components)
+- `TaxClass/` - Tax class management
 
-**Frontend Components** (`/Frontend`)
-- Customer-facing components
-- Full-page components preferred
+**Frontend Components** - Use full-page Livewire components for better UX
 
 ### `/app/Models`
 
@@ -131,10 +134,37 @@ Eloquent models represent database tables.
 ### `/app/Helpers`
 
 Reusable helper classes:
-- `FormHelper` - Form rendering
-- `SettingHelper` - Settings access
+- `AppHelper` - General app utilities, breadcrumbs
+- `CategoryHelper` - Category tree operations
 - `CurrencyHelper` - Currency formatting
+- `FormHelper` - Form field rendering
+- `LanguageHelper` - Language/translation utilities
+- `MediaHelper` - Media file handling
+- `NotificationHelper` - Notification utilities
+- `SettingHelper` - Settings access
 - `TaxHelper` - Tax calculations
+
+### `/app/Traits`
+
+Reusable model traits:
+- `HasMeta` - Key-value metadata storage
+- `HasSafeCode` - Unique code generation
+- `HasSlug` - URL-friendly slug generation
+- `HasStatus` - Status management
+- `HasStockManagement` - Stock operations (Part model)
+- `ManagesPartStock` - Part stock in orders (RepairOrder model)
+- `RepairOrderPermissions` - Permission checking
+
+### `/app/Settings/Pages`
+
+Setting page definitions:
+- `GeneralSettingPage` - Basic settings
+- `CompanySettingPage` - Company info
+- `EmailSettingPage` - Email config
+- `TaxSettingPage` - Tax settings
+- `FinanceSettingPage` - Currency settings
+- `InventorySettingPage` - Stock settings
+- `AuthenticationSettingPage` - Login settings
 
 ### `/resources/views`
 

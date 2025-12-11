@@ -84,7 +84,6 @@ Navigate to **Settings** and configure:
 Customers can track their orders by:
 1. Visiting your website
 2. Entering their order code
-3. Viewing real-time status updates
 
 ### Generating an Invoice
 

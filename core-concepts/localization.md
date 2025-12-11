@@ -4,7 +4,7 @@ Understanding RepairCore's internationalization and localization features.
 
 ## Overview
 
-RepairCore is built with full internationalization support using Laravel's translation system.
+RepairCore is built with full internationalization support using Laravel's translation system with a **single JSON file** approach.
 
 ## Translation System
 
@@ -12,77 +12,98 @@ RepairCore is built with full internationalization support using Laravel's trans
 
 **In PHP/Blade**
 ```php
-__('Manage Users')
-__('Order created successfully')
-__('Welcome, :name', ['name' => $user->name])
+__('manage_users')
+__('order_created_successfully')
+__('welcome_name', ['name' => $user->name])
 ```
 
 **In JavaScript**
 ```javascript
 // Use Laravel's translation helper
-trans('messages.welcome')
+window.translations.manage_users
 ```
 
 ### Translation Keys
 
 **Format**
-- Use original English text as keys
-- Not short keys or slugified strings
-- Example: `__('Manage Users')` not `__('manage.users')`
+- Use **slugified keys** (snake_case)
+- All keys in a single JSON file
+- No module prefixes like `post.`, `user.`
+- Descriptive and complete slugs
 
-**Benefits**
-- More readable code
-- Easier to understand context
-- Default fallback is the key itself
+**Examples:**
+```php
+// CORRECT
+__('manage_posts')
+__('post_created_successfully')
+__('delete_selected')
+__('published_at')
+
+// WRONG - Don't use these formats
+__('Manage Posts')        // Not slugified
+__('post.manage')         // Has prefix
+__('manage-posts')        // Uses hyphens
+```
+
+**Key Naming Patterns:**
+- **List/Manage**: `manage_[resource]` → "Manage Posts"
+- **CRUD Actions**: `[action]_[resource]` → "create_post", "edit_post"
+- **Status**: `status_[status]` → "status_draft", "status_active"
+- **Messages**: `[resource]_[action]_[result]` → "post_created_successfully"
+- **Form Fields**: `[resource]_[field]` → "post_title", "post_slug"
+- **Placeholders**: `[action]_[resource]_[field]` → "enter_post_title"
+- **Dates/Times**: Use underscores → "published_at", "created_at"
 
 ## Language Files
 
 ### Location
 
-Language files are stored in:
+All translations are stored in a **single JSON file**:
 ```
 repair-core/resources/lang/
-├── en/
-│   ├── messages.php
-│   ├── validation.php
-│   └── auth.php
-├── es/
-├── fr/
+├── en.json              # English translations (primary)
+├── vi.json              # Vietnamese translations
 └── ...
 ```
 
-### Auto-Generation
+**Important:** Do NOT use PHP language files (`.php`). All translations must be in JSON format.
 
-Language files can be auto-generated from source code using a tool (to be implemented).
+### JSON File Structure
 
-**Process:**
-1. Scan codebase for `__()` calls
-2. Extract translation strings
-3. Generate language files
-4. Translators fill in translations
+```json
+{
+  "manage_posts": "Manage Posts",
+  "create_post": "Create Post",
+  "post_created_successfully": "Post created successfully",
+  "delete_selected": "Delete Selected",
+  "status_draft": "Draft",
+  "status_active": "Active"
+}
+```
+
+### Language Management
+
+RepairCore includes a built-in Language Management system in the admin panel:
+- **Admin > Languages** - Manage available languages
+- Create, edit, delete languages
+- Edit translations directly in the admin panel
+- Build/export language files
 
 ## Adding New Languages
 
-### 1. Create Language Directory
+### Via Admin Panel (Recommended)
 
-```bash
-mkdir resources/lang/es
-```
+1. Navigate to **Admin > Languages**
+2. Click **Add New Language**
+3. Fill in language details (name, code, native name)
+4. Save and start translating
 
-### 2. Copy English Files
+### Manual Method
 
-```bash
-cp -r resources/lang/en/* resources/lang/es/
-```
-
-### 3. Translate Strings
-
-Edit the files in `resources/lang/es/` and translate the strings.
-
-### 4. Configure Available Languages
-
-Update settings in admin panel:
-- Settings > General > Languages
+1. Create a new JSON file: `resources/lang/{locale}.json`
+2. Copy content from `en.json`
+3. Translate all values
+4. Register the language in admin panel
 
 ## Setting Default Language
 
@@ -102,41 +123,40 @@ APP_LOCALE=en
 APP_FALLBACK_LOCALE=en
 ```
 
-### Per User
+### Via Admin Panel
 
-Users can select their preferred language in their profile settings.
+Navigate to **Admin > Languages** and click "Set as Default" for the desired language.
 
 ## Translation in Views
 
 ### Blade Templates
 
 ```blade
-<h1>{{ __('Welcome') }}</h1>
-<p>{{ __('Hello, :name', ['name' => $user->name]) }}</p>
+<h1>{{ __('welcome') }}</h1>
+<p>{{ __('hello_name', ['name' => $user->name]) }}</p>
 ```
 
 ### Pluralization
 
 ```blade
-{{ trans_choice('messages.apples', 10) }}
+{{ trans_choice('apples_count', 10) }}
 ```
 
-In language file:
-```php
-'apples' => '{0} There are none|{1} There is one|[2,*] There are :count',
+In JSON file:
+```json
+{
+  "apples_count": "{0} There are none|{1} There is one|[2,*] There are :count"
+}
 ```
 
 ## Translation in JavaScript
 
 ### Passing Translations
 
-In Blade:
+In Blade layout:
 ```blade
 <script>
-    window.translations = {
-        'welcome': '{{ __('Welcome') }}',
-        'goodbye': '{{ __('Goodbye') }}'
-    };
+    window.translations = @json(app('translator')->getLoader()->load(app()->getLocale(), '*', '*'));
 </script>
 ```
 
@@ -152,7 +172,7 @@ console.log(window.translations.welcome);
 ```php
 public function save()
 {
-    session()->flash('message', __('Order saved successfully'));
+    session()->flash('message', __('order_saved_successfully'));
 }
 ```
 
@@ -160,8 +180,8 @@ public function save()
 
 ```blade
 <div>
-    <h2>{{ __('Edit Order') }}</h2>
-    <button>{{ __('Save') }}</button>
+    <h2>{{ __('edit_order') }}</h2>
+    <button>{{ __('save') }}</button>
 </div>
 ```
 
@@ -172,7 +192,7 @@ public function save()
 Email templates support translations:
 
 ```blade
-{{ __('Your order :code is ready', ['code' => $order->code]) }}
+{{ __('your_order_is_ready', ['code' => $order->code]) }}
 ```
 
 ### Notification Classes
@@ -181,9 +201,9 @@ Email templates support translations:
 public function toMail($notifiable)
 {
     return (new MailMessage)
-        ->subject(__('Order Status Update'))
-        ->line(__('Your order has been updated.'))
-        ->action(__('View Order'), $url);
+        ->subject(__('order_status_update'))
+        ->line(__('your_order_has_been_updated'))
+        ->action(__('view_order'), $url);
 }
 ```
 
@@ -198,25 +218,26 @@ echo "Welcome to RepairCore";
 
 ✅ Good:
 ```php
-echo __('Welcome to RepairCore');
+echo __('welcome_to_repaircore');
 ```
 
-### 2. Use Original Text as Keys
+### 2. Use Slugified Keys
 
 ❌ Bad:
 ```php
-__('welcome.message')
+__('Welcome to RepairCore')  // Not slugified
+__('welcome.message')        // Has dot prefix
 ```
 
 ✅ Good:
 ```php
-__('Welcome to RepairCore')
+__('welcome_to_repaircore')
 ```
 
 ### 3. Provide Context with Parameters
 
 ```php
-__('Order :code created by :user', [
+__('order_created_by_user', [
     'code' => $order->code,
     'user' => $user->name
 ])
@@ -224,11 +245,11 @@ __('Order :code created by :user', [
 
 ### 4. Keep Translations Consistent
 
-Use the same translation for the same concept across the application.
+Use the same translation key for the same concept across the application.
 
-### 5. Test All Languages
+### 5. Add New Keys to JSON File
 
-Ensure all translations are complete and make sense in context.
+When adding new translatable strings, add them to `en.json` immediately.
 
 ## Language Switching
 
@@ -237,19 +258,11 @@ Ensure all translations are complete and make sense in context.
 Users can select their language in:
 - Profile Settings > Language
 
-### URL-Based
-
-Optionally support language in URL:
-```
-/en/orders
-/es/orders
-```
-
 ### Session-Based
 
 Store language preference in session:
 ```php
-session(['locale' => 'es']);
+session(['locale' => 'vi']);
 app()->setLocale(session('locale'));
 ```
 
@@ -269,25 +282,23 @@ $rtl = in_array(app()->getLocale(), ['ar', 'he']);
 <html dir="{{ $rtl ? 'rtl' : 'ltr' }}">
 ```
 
-### 3. RTL Styles
+## Built-in Language Management
 
-Include RTL-specific styles when needed.
+RepairCore includes a comprehensive Language Management system:
 
-## Translation Tools
+### Features
+- **Create/Edit Languages** - Add new languages with name, code, native name
+- **Translation Editor** - Edit translations directly in admin panel
+- **Build System** - Generate optimized language files
+- **Import/Export** - Load translations from JSON files
+- **Bulk Actions** - Delete multiple languages at once
+- **Set Default** - Configure default application language
 
-### Recommended Tools
-
-- **POEditor** - Online translation management
-- **Lokalise** - Translation platform
-- **Laravel Translation Manager** - Package for managing translations
-
-### Custom Tool
-
-RepairCore will include a custom tool to:
-- Extract translation strings from code
-- Generate language files
-- Track missing translations
-- Export/import translations
+### Admin Routes
+- `admin/languages` - List all languages
+- `admin/languages/{language}/edit` - Edit language translations
+- `admin/languages/{language}/build` - Build language file
+- `admin/languages/{language}/set-default` - Set as default
 
 ---
 

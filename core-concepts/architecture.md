@@ -89,7 +89,6 @@ Utility functions organized in helper classes:
 **Livewire 3.6**
 - Full-page reactive components
 - Server-side rendering
-- Real-time updates without JavaScript
 
 **Bootstrap 5.3**
 - Responsive grid system

@@ -122,29 +122,57 @@ Organized into 6 sub-sections:
 
 ## Content Status
 
-### ✅ Complete (15 files)
+### ✅ Complete (25+ files)
 Files with detailed, ready-to-use content:
+
+**Introduction:**
 1. README.md
-2. whats-new.md
+2. whats-new.md (Updated Dec 2024)
 3. release-notes.md
+
+**Getting Started:**
 4. getting-started/system-requirements.md
 5. getting-started/installation.md
 6. getting-started/configuration.md
 7. getting-started/quick-start.md
 8. getting-started/demo-data.md
+
+**Core Concepts:**
 9. core-concepts/architecture.md
-10. core-concepts/project-structure.md
+10. core-concepts/project-structure.md (Updated: Livewire, Traits, Settings)
 11. core-concepts/database-design.md
 12. core-concepts/security.md
-13. core-concepts/localization.md
-14. features/repair-management/repair-orders.md
+13. core-concepts/localization.md (Updated: Single JSON, slugified keys)
+
+**Features - Repair Management:**
+14. features/repair-management/repair-orders.md (Updated: Livewire sections)
 15. features/repair-management/order-workflow.md
 16. features/repair-management/order-tracking.md
 17. features/repair-management/progress-logging.md
 18. features/repair-management/assignments.md
-19. development/coding-standards.md
 
-### 📝 Placeholder (105+ files)
+**Features - Inventory:**
+19. features/inventory-management/stock-management.md (Updated: Traits)
+
+**Features - Financial:**
+20. features/financial-management/tax-management.md (Updated: Multi-tax class)
+
+**Features - Notifications:**
+21. features/notifications/overview.md (Updated: Templates, preferences)
+
+**Features - User Management:**
+22. features/user-management/users-roles.md (Updated: RBAC)
+
+**Features - Settings:**
+23. features/settings/general.md (Updated: All setting pages)
+
+**Development:**
+24. development/coding-standards.md
+25. development/backend/traits.md (Updated: All traits)
+26. development/backend/helpers.md (Updated: All helpers)
+27. development/frontend/livewire.md (Updated: Correct namespace)
+
+### 📝 Placeholder (90+ files)
 Files created with basic structure, ready for content to be added.
 
 ## Next Steps
