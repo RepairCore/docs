@@ -12,8 +12,6 @@ Repair orders track the entire lifecycle of a repair from customer intake to fin
 
 Navigate to **Admin > Repair Orders** to see all orders.
 
-[image_repair_orders_index]
-
 ### List Features
 
 - **Search** - Find orders by code, customer name, or device
@@ -28,8 +26,6 @@ Navigate to **Admin > Repair Orders** to see all orders.
 3. Fill in the order information
 4. Click **Save**
 
-[image_create_repair_order]
-
 ### Step 1: Customer & Device
 
 Select or create a customer and their device:
@@ -37,159 +33,75 @@ Select or create a customer and their device:
 1. **Search Customer** - Type customer name or phone
 2. **Create New** - Click to add new customer if not found
 3. **Select Device** - Choose from customer's devices or add new
+4. **Select labels** - Select labels to assign to the order
 
 [image_customer_device_section]
 
-### Step 2: Problem Description
+### Step 2: Assignments
+
+Assign technicians to work on the order:
+1. Click **Assignments**
+2. Select technician from list
+
+### Step 3: Diagnostic
 
 Enter the reported problem:
-- **Problem Description** - What the customer reported
-- **Condition Notes** - Device condition at intake
-- **Priority** - Low, Normal, High, or Urgent
+- **Notes** - What the customer reported
+- **Attachments** - Attach photos or videos
+- **Estimated Diagnosis** - Estimated diagnosis of the device
 
-### Step 3: Add Parts & Services
+### Step 4: Add Parts & Services
 
 Add parts and services to the order:
 
-**Adding Parts:**
-1. Click **Add Part**
-2. Search for part by name or SKU
-3. Enter quantity
-4. Part is added with price and tax
-
-**Adding Services:**
-1. Click **Add Service**
-2. Search for service
-3. Adjust price if needed
+**Adding Parts and Services:**
+1. Search for part or service by name or SKU
+2. Enter quantity and description
+3. Part is added with price and tax
 
 [image_parts_services_section]
 
-### Step 4: Save Order
+### Step 5: Progress Log
 
-Click **Save** to create the order. An order code is automatically generated.
-
-## Order Statuses
-
-| Status | Description |
-|--------|-------------|
-| **Draft** | Order being created |
-| **Pending** | Awaiting diagnosis or approval |
-| **In Progress** | Repair work in progress |
-| **Waiting Parts** | Waiting for parts to arrive |
-| **Completed** | Repair finished |
-| **Delivered** | Device returned to customer |
-| **Cancelled** | Order cancelled |
-
-[image_order_status_flow]
-
-### Changing Status
-
-1. Open the repair order
-2. Go to **Status** tab
-3. Select new status
-4. Add notes (optional)
-5. Click **Update Status**
-
-## Order Tabs
-
-### Customer & Device
-
-View and edit customer and device information.
-
-### Parts & Services
-
-Manage parts and services on the order:
-- Add/remove items
-- Adjust quantities
-- View pricing and tax
-
-### Status
-
-Change order status and view status history.
-
-### Assignment
-
-Assign technicians to work on the order:
-1. Click **Assign Technician**
-2. Select technician from list
-3. Add notes (optional)
-
-[image_assignment_section]
-
-### Diagnostic
-
-Record diagnostic findings:
-- Problem diagnosis
-- Recommended repairs
-- Estimated cost
-
-### Payment
-
-Record customer payments:
-1. Click **Add Payment**
-2. Enter amount
-3. Select payment method
-4. Add notes (optional)
-
-[image_payment_section]
-
-### Delivery
-
-Record delivery information:
-- Delivery date
-- Received by
-- Delivery notes
-
-### Labels
-
-Assign labels to organize orders:
-- Click to add/remove labels
-- Labels help filter and categorize orders
-
-### Progress
-
-View and add progress log entries:
-1. Click **Add Progress**
-2. Enter description of work done
-3. Add time spent (optional)
-4. Attach photos (optional)
+- **Add Progress and Type** - Add progress log entries
+- **Add Time** - Add time spent on the order
+- **Add Attachments** - Attach photos or videos
+- **Visible to Customer** - Make progress log visible to customer
 
 [image_progress_section]
 
-### Warranty
+### Step 6: Payment Information
 
-Configure warranty for the order:
-- Warranty period (months)
-- Warranty notes
-- View warranty expiry date
+- **Amount** - Enter payment amount
+- **Payment Method** - Select payment method
+- **Payment Status** - Select payment status
+- **Payment Notes** - Add payment notes
 
-## Generating Documents
+[image_payment_section]
 
-Generate professional documents from orders:
+### Step 7: Delivery Information
 
-| Document | Description |
-|----------|-------------|
-| **Quotation** | Price quote for customer approval |
-| **Invoice** | Final invoice with all charges |
-| **Receipt** | Payment receipt |
-| **Warranty** | Warranty certificate |
+- **Delivery Date** - Select delivery date
+- **Delivery Method** - Select delivery method
+- **Delivery To** - Select delivery to
+- **Delivery Address** - Select delivery address
+- **Delivery Notes** - Add delivery notes
 
-[image_document_buttons]
+[image_delivery_section]
 
-### How to Generate
+### Step 8: Warranty Information
 
-1. Open the repair order
-2. Click the document button (Quotation, Invoice, etc.)
-3. PDF opens in new tab
-4. Print or download
+- **Warranty Period** - Select warranty period
+- **Warranty Notes** - Add warranty notes
 
-## Deleting Orders
+[image_warranty_section]
 
-1. Open the repair order
-2. Click **Delete** button
-3. Confirm deletion
+### Step 9: Documents
 
-> **Note:** Deleted orders are soft-deleted and can be restored if needed.
+- **Quotation** - Add quotation to the order
+- **Invoice** - Add invoice to the order
+- **Receipt** - Add receipt to the order
+- **Warranty** - Add warranty to the order
 
 ---
 

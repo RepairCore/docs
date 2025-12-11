@@ -16,46 +16,30 @@ View repair order counts by status:
 
 | Metric | Description |
 |--------|-------------|
+| **Total Orders** | Total number of orders |
 | **Pending** | Orders awaiting action |
 | **In Progress** | Orders being worked on |
-| **Completed** | Finished orders |
-| **Delivered** | Orders returned to customers |
-
-[image_order_statistics_widget]
-
-### Recent Orders
-
-Shows the most recent repair orders:
-- Order code
-- Customer name
-- Device
-- Status
-- Created date
-
-Click an order to view details.
-
-[image_recent_orders_widget]
+| **Completed Today** | Orders completed today |
 
 ### Revenue Overview
 
 View financial summary:
 - Today's revenue
-- This week's revenue
 - This month's revenue
-- Outstanding balance
+- This pending's revenue
+- Total customers
 
-[image_revenue_widget]
+### Recent Orders
 
-### Low Stock Alerts
+Shows the most recent repair orders:
+- Order Id
+- Device
+- Status
+- Amount
 
-Parts with stock below threshold:
-- Part name
-- Current stock
-- Threshold level
+Click an order to view details.
 
-Click to view part details.
-
-[image_low_stock_widget]
+...
 
 ## Customizing Dashboard
 

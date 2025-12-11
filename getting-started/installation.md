@@ -120,8 +120,6 @@ Click **Start Installation** to complete the setup. The installer will:
 
 After installation, log in to the admin panel with your credentials.
 
-[image_admin_login]
-
 ## Post-Installation
 
 ### Review Settings

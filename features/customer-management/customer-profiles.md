@@ -22,7 +22,6 @@ Navigate to **Admin > Customers** to see all customers.
 3. Fill in customer details
 4. Click **Save**
 
-[image_create_customer]
 
 ### Customer Fields
 
@@ -64,7 +63,6 @@ View all devices registered to this customer:
 - Serial number
 - Last repair date
 
-[image_customer_devices]
 
 ### Orders Tab
 
@@ -77,38 +75,13 @@ View all repair orders for this customer:
 
 Click an order to view details.
 
-### Notes Tab
-
-Internal notes about the customer (not visible to customer).
-
-## Managing Customer Devices
-
-### Adding a Device
-
-1. Open customer profile
-2. Go to **Devices** tab
-3. Click **Add Device**
-4. Fill in device details
-5. Click **Save**
-
-### Device Fields
-
-| Field | Description |
-|-------|-------------|
-| **Device Type** | Category (Phone, Laptop, etc.) |
-| **Brand** | Manufacturer |
-| **Model** | Model name/number |
-| **Serial Number** | Device serial or IMEI |
-| **Color** | Device color |
-| **Notes** | Additional notes |
-
 ## Deleting a Customer
 
 1. Open customer profile
 2. Click **Delete** button
 3. Confirm deletion
 
-> **Warning:** Deleting a customer also removes their devices. Repair order history is preserved.
+> **Warning:** Deleting a customer will not remove their devices. Repair order history is preserved.
 
 ## Quick Customer Creation
 
