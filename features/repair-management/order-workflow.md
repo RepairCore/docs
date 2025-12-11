@@ -21,59 +21,46 @@ When a customer brings a device:
 
 [image_intake_stage]
 
-### 2. Diagnostic
+### 2. Diagnostic & Assignment
 
-Examine the device:
-1. Assign to technician
+Examine the device and assign work:
+1. Assign to technician(s)
 2. Diagnose the problem
 3. Identify required parts/services
-4. Estimate repair time
-5. Add progress log
+4. Add progress log with findings
 
-### 3. Quote & Approval
-
-Get customer approval:
-1. Add parts and services to order
-2. System calculates total with tax
-3. Generate quote document
-4. Send to customer
-5. Wait for approval
-
-### 4. Repair
+### 3. Repair
 
 Perform the repair:
 1. Change status to "In Progress"
-2. Use required parts (stock deducted)
-3. Perform services
+2. Add required parts (stock deducted automatically)
+3. Add services performed
 4. Log progress regularly
 5. Update status as work progresses
 
 [image_repair_stage]
 
-### 5. Quality Check
+### 4. Completion
 
-Verify the repair:
+Finish the repair:
 1. Test device functionality
-2. Ensure repair quality
-3. Document completion
-4. Change status to "Completed"
+2. Document completion in progress log
+3. Change status to "Completed"
 
-### 6. Payment & Delivery
+### 5. Payment & Delivery
 
 Complete the order:
 1. Generate invoice
 2. Record payment
-3. Notify customer
-4. Deliver device
-5. Change status to "Delivered"
+3. Deliver device to customer
+4. Change status to "Delivered"
 
 ## Order Statuses
 
 | Status | Description |
 |--------|-------------|
 | **Draft** | Order created, not yet submitted |
-| **Pending** | Awaiting diagnostic or approval |
-| **Approved** | Customer approved, ready for repair |
+| **Pending** | Awaiting diagnostic or work |
 | **In Progress** | Repair work underway |
 | **Completed** | Repair finished, awaiting payment/pickup |
 | **Delivered** | Device returned to customer |
@@ -86,19 +73,15 @@ Complete the order:
 1. Open the repair order
 2. Click the status dropdown
 3. Select new status
-4. Add notes if needed
-5. Save
-
-> **Note:** Status changes are logged and may trigger notifications.
+4. Save
 
 ## Tips for Efficient Workflow
 
 1. **Document everything** - Add photos and detailed notes
-2. **Update status promptly** - Keep customers informed
+2. **Update status promptly** - Keep records current
 3. **Log progress** - Track work performed
 4. **Use assignments** - Distribute work among technicians
-5. **Set priorities** - Handle urgent repairs first
 
 ---
 
-Next: [Progress Logging](progress-logging.md)
+Next: [Technician Assignments](assignments.md)

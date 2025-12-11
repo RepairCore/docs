@@ -79,12 +79,18 @@
 - Safari 14+
 - Edge 90+
 
-### Customer Portal
+### Frontend (Customer Portal)
 - Chrome 90+
 - Firefox 88+
 - Safari 14+
 - Edge 90+
 - Mobile browsers (iOS Safari, Chrome Mobile)
+
+## Frontend Technology
+
+The customer-facing frontend is built with:
+- **Tailwind CSS 4** - Modern utility-first CSS framework
+- **Livewire** - Full-page components for dynamic interactions
 
 ## Additional Tools
 

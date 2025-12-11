@@ -1,132 +1,57 @@
 # Demo Data
 
-Learn how to use demo data for testing and development.
+RepairCore includes sample data to help you get started quickly.
 
 ## Overview
 
-RepairCore includes seeders that populate your database with sample data for testing and demonstration purposes.
-
-## Seeding Demo Data
-
-### Full Database Seed
-
-To seed all demo data:
-
-```bash
-php artisan db:seed
-```
-
-### Specific Seeders
-
-To run specific seeders:
-
-```bash
-php artisan db:seed --class=UserSeeder
-php artisan db:seed --class=RepairOrderSeeder
-php artisan db:seed --class=PartSeeder
-```
+During installation, the installer automatically seeds demo data to populate your system with sample records. This helps you explore features and understand how the system works.
 
 ## What's Included
 
-### Users
+### Users & Roles
 
-- **Admin User**
-  - Email: admin@example.com
-  - Password: password
-  - Role: Administrator
-
-- **Technician Users**
-  - Sample technicians with various skill levels
-
-- **Customer Users**
-  - Sample customers with contact information
-
-### Repair Orders
-
-- Sample repair orders in various statuses
-- Complete order history
-- Progress logs
-- Assignments
+- **Default Roles** - Administrator, Technician, Receptionist roles with appropriate permissions
+- **Sample Users** - Demo staff accounts for testing
 
 ### Parts & Services
 
-- Sample parts catalog
-- Part brands and categories
-- Service catalog
-- Service categories
+- **Parts Catalog** - Sample parts with categories and brands
+- **Service Catalog** - Common repair services with categories
+- **Tax Classes** - Default tax configurations
 
 ### Devices
 
-- Sample device types
-- Device brands and models
+- **Device Types** - Common device categories (phones, laptops, tablets)
+- **Brands & Models** - Popular device brands
 
-### Financial Data
+### Settings
 
-- Tax classes
-- Sample invoices
-- Payment records
-
-### Content
-
-- Sample blog posts
-- Categories and tags
-- Media files
-
-## Resetting Demo Data
-
-To reset your database and reseed:
-
-```bash
-php artisan migrate:fresh --seed
-```
-
-> ⚠️ **Warning:** This will delete all existing data!
+- **Default Settings** - Pre-configured system settings
+- **Status Options** - Order statuses and workflows
 
 ## Using Demo Data
 
-### For Development
+Demo data helps you:
+- **Explore features** - See how the system works with real data
+- **Test workflows** - Practice creating orders and managing repairs
+- **Train staff** - Learn the system before going live
+- **Customize** - Use as a starting point for your own data
 
-Demo data is useful for:
-- Testing new features
-- UI/UX development
-- Workflow testing
-- Training
+## Clearing Demo Data
 
-### For Demonstrations
+Before going live, you may want to remove demo data:
 
-Use demo data to:
-- Show potential clients
-- Create screenshots
-- Record tutorial videos
-- Test integrations
+1. Delete sample customers
+2. Delete sample parts (or update with your inventory)
+3. Delete sample services (or update with your offerings)
+4. Update or delete sample users
 
-## Customizing Seeders
+> **Tip:** Keep the default roles and permissions - they provide a good starting point for your team structure.
 
-You can customize seeders to match your business needs.
+## Starting Fresh
 
-Seeders are located in:
-```
-repair-core/database/seeders/
-```
-
-### Creating Custom Seeders
-
-```bash
-php artisan make:seeder CustomSeeder
-```
-
-Edit the seeder file and run:
-
-```bash
-php artisan db:seed --class=CustomSeeder
-```
-
-## Production Warning
-
-> ⚠️ **Never run seeders in production!**
-> 
-> Seeders are for development and testing only. Running them in production will create fake data in your live system.
+If you prefer to start without demo data, you can skip the demo seeder during installation.
 
 ---
 
-Next: [Core Concepts](../core-concepts/architecture.md)
+Next: [Admin Dashboard](../ui/admin-dashboard.md)

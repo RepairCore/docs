@@ -48,10 +48,6 @@
 ### Labels
 * [Label Management](features/labels/label-system.md)
 
-### Notifications
-* [Notification Templates](features/notifications/templates.md)
-* [Email Settings](features/notifications/email.md)
-
 ## Settings
 
 * [General Settings](features/settings/general.md)
@@ -61,6 +57,11 @@
 * [Inventory Settings](features/settings/inventory.md)
 * [Email Configuration](features/settings/email.md)
 * [Authentication](features/settings/authentication.md)
+
+## Frontend
+
+* Built with Tailwind CSS 4
+* Livewire full-page components
 
 ## Troubleshooting
 

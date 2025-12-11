@@ -1,86 +1,63 @@
 # Technician Assignments
 
-Assign repair orders to technicians.
+Assign repair orders to staff members.
 
 [image_assignments]
 
 ## Overview
 
-Assign orders to technicians to distribute work and track who is responsible for each repair.
+Assign orders to one or more users to track who is responsible for each repair. Multiple users can be assigned to a single order.
 
-## Assigning an Order
+## Assignment Section
+
+The assignment section is located in the repair order form. It shows:
+- List of currently assigned users
+- Option to add new assignments
+
+[image_assignment_section]
+
+## Viewing Assigned Users
+
+Each assigned user shows:
+- **Name** - User's name (clickable link to profile)
+- **Role** - User's role badge
+- **Email** - Contact email
+
+## Adding an Assignment
 
 1. Open a repair order
-2. Go to order details
-3. Click **Assign Technician** dropdown
-4. Select a technician
-5. Save
+2. Go to the **Assignment** section
+3. Use the **Select User** dropdown to search for a user
+4. Click **Assign** button
+5. User is added to the assignment list
 
-[image_assign_technician]
+[image_add_assignment]
 
-## Viewing Assignments
+> **Note:** You can assign multiple users to the same order.
 
-### On Order List
+## Removing an Assignment
 
-The orders list shows the assigned technician for each order. Filter by technician to see their workload.
+1. Find the assigned user in the list
+2. Click the **trash** button next to their name
+3. Confirm the removal
 
-### On Order Details
+[image_remove_assignment]
 
-Open an order to see who is assigned and assignment history.
+## View-Only Mode
 
-## Reassigning an Order
+If you don't have permission to edit the order, the assignment section displays in view-only mode with a "View Only" indicator.
 
-1. Open the repair order
-2. Click the technician dropdown
-3. Select a different technician
-4. Save
+## Requirements
 
-> **Note:** Reassignment is logged in the order history.
-
-## Priority
-
-Set order priority to help technicians prioritize work:
-
-| Priority | Description |
-|----------|-------------|
-| **Low** | Can wait, no rush |
-| **Normal** | Standard priority |
-| **High** | Should be done soon |
-| **Urgent** | Needs immediate attention |
-
-[image_priority_dropdown]
-
-## Notifications
-
-When assigned, technicians receive:
-- In-app notification
-- Email notification (if enabled)
-
-## Workload View
-
-See how many orders each technician has:
-
-1. Go to **Repair Orders**
-2. Use the technician filter
-3. View count per technician
-
-[image_workload_view]
+- The repair order must be saved before you can add assignments
+- If the order hasn't been created yet, you'll see a message: "Please create the repair order first before editing this section"
 
 ## Best Practices
 
-### For Managers
-
-- **Balance workload** - Distribute orders evenly
-- **Consider expertise** - Match skills to repair type
-- **Monitor progress** - Check for overdue orders
-- **Communicate** - Inform about priority changes
-
-### For Technicians
-
-- **Check assignments** - Review your queue daily
-- **Update status** - Keep orders current
-- **Log progress** - Document work performed
-- **Communicate delays** - Notify early if issues arise
+- **Assign early** - Assign technicians when the order is created
+- **Multiple assignments** - Assign multiple users for complex repairs
+- **Track responsibility** - Use assignments to know who is working on what
+- **Update as needed** - Remove and add assignments as work progresses
 
 ---
 

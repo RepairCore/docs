@@ -1,6 +1,6 @@
 # Installation
 
-This guide will walk you through installing RepairCore on your server or local development environment.
+RepairCore includes a web-based installer that guides you through the setup process.
 
 ## Prerequisites
 
@@ -8,134 +8,103 @@ Before you begin, ensure you have met the [System Requirements](system-requireme
 
 ## Installation Steps
 
-### 1. Clone the Repository
+### 1. Upload Files
 
-```bash
-git clone https://github.com/yourusername/repaircore.git
-cd repaircore/repair-core
-```
+Upload the RepairCore files to your web server.
 
-### 2. Install PHP Dependencies
+### 2. Access the Installer
 
-```bash
-composer install
-```
+Navigate to your domain in a web browser. The installer will automatically start.
 
-### 3. Install Node Dependencies
+[image_installer_welcome]
 
-```bash
-# Install admin theme dependencies
-cd ../public_html/themes/admin
-npm install
+### 3. System Check
 
-# Install frontend theme dependencies
-cd ../frontend
-npm install
-```
+The installer checks your server meets all requirements:
+- PHP version and extensions
+- Directory permissions
+- Database connectivity
 
-### 4. Configure Environment
+[image_installer_requirements]
 
-```bash
-cd ../../../repair-core
-cp .env.example .env
-php artisan key:generate
-```
+### 4. Database Configuration
 
-### 5. Configure Database
+Enter your database credentials:
+- Database host
+- Database name
+- Database username
+- Database password
 
-Edit the `.env` file with your database credentials:
+[image_installer_database]
 
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=repaircore
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
-```
+### 5. Admin Account
 
-### 6. Run Migrations
+Create your administrator account:
+- Name
+- Email address
+- Password
 
-```bash
-php artisan migrate
-```
+[image_installer_admin]
 
-### 7. Seed Demo Data (Optional)
+### 6. Company Information
 
-```bash
-php artisan db:seed
-```
+Enter your company details:
+- Company name
+- Address
+- Contact information
 
-### 8. Build Frontend Assets
+[image_installer_company]
 
-```bash
-# Build admin theme
-cd ../public_html/themes/admin
-npm run build
+### 7. Complete Installation
 
-# Build frontend theme
-cd ../frontend
-npm run build
-```
+Click **Install** to complete the setup. The installer will:
+- Create database tables
+- Set up default settings
+- Create your admin account
+- Seed demo data (optional)
 
-### 9. Start Development Server
+[image_installer_complete]
 
-```bash
-cd ../../../repair-core
-php artisan serve
-```
+### 8. Access Admin Panel
 
-Visit `http://localhost:8000` to access the application.
+After installation, log in to the admin panel with your credentials.
 
-## Quick Setup Script
+[image_admin_login]
 
-Alternatively, use the built-in setup script:
+## Post-Installation
 
-```bash
-composer setup
-```
+### Configure Email
 
-This will automatically:
-- Install all dependencies
-- Generate application key
-- Run migrations
-- Build assets
+Go to **Settings > Email** to configure SMTP for sending notifications.
 
-## Development Mode
+### Review Settings
 
-For active development with hot reloading:
+Check all settings pages to customize RepairCore for your business.
 
-```bash
-composer dev
-```
+### Add Staff
 
-This starts:
-- PHP development server
-- Queue worker
-- Log viewer (Pail)
-- Vite dev server with HMR
+Create user accounts for your team members.
 
 ## Troubleshooting
 
-### Permission Issues
+### Installer Not Loading
 
-If you encounter permission errors:
-
-```bash
-chmod -R 755 storage bootstrap/cache
-```
+- Check file permissions
+- Verify web server configuration
+- Check PHP version
 
 ### Database Connection Failed
 
-- Verify database credentials in `.env`
+- Verify database credentials
 - Ensure database server is running
 - Check database user has proper permissions
 
-### Asset Build Errors
+### Permission Errors
 
-- Clear npm cache: `npm cache clean --force`
-- Delete `node_modules` and reinstall: `rm -rf node_modules && npm install`
+Ensure these directories are writable:
+- `storage/`
+- `bootstrap/cache/`
 
 ---
 
-Next: [Configuration](configuration.md)
+Next: [Quick Start Guide](quick-start.md)
