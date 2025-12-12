@@ -2,7 +2,7 @@
 
 Control what users can access and do in the system.
 
-[image_roles_list]
+[image_user_roles]
 
 ## Overview
 
@@ -11,8 +11,6 @@ Roles define what a user can do. Each role has a set of permissions that grant a
 ## Viewing Roles
 
 Navigate to **Admin > Roles** to see all roles.
-
-[image_roles_index]
 
 ## Creating a Role
 
@@ -45,64 +43,7 @@ Navigate to **Admin > Roles** to see all roles.
 
 ## Permissions
 
-Permissions control access to specific features:
-
-### Repair Orders
-
-| Permission | Description |
-|------------|-------------|
-| View Orders | See repair orders |
-| Create Orders | Create new orders |
-| Edit Orders | Modify existing orders |
-| Delete Orders | Delete orders |
-| Change Status | Update order status |
-| Assign Technicians | Assign staff to orders |
-| Add Payments | Record payments |
-
-### Customers
-
-| Permission | Description |
-|------------|-------------|
-| View Customers | See customer list |
-| Create Customers | Add new customers |
-| Edit Customers | Modify customer info |
-| Delete Customers | Delete customers |
-
-### Inventory
-
-| Permission | Description |
-|------------|-------------|
-| View Parts | See parts catalog |
-| Create Parts | Add new parts |
-| Edit Parts | Modify parts |
-| Delete Parts | Delete parts |
-| Adjust Stock | Manual stock adjustments |
-
-### Services
-
-| Permission | Description |
-|------------|-------------|
-| View Services | See service catalog |
-| Create Services | Add new services |
-| Edit Services | Modify services |
-| Delete Services | Delete services |
-
-### Users
-
-| Permission | Description |
-|------------|-------------|
-| View Users | See user list |
-| Create Users | Add new users |
-| Edit Users | Modify users |
-| Delete Users | Delete users |
-| Manage Roles | Create and edit roles |
-
-### Settings
-
-| Permission | Description |
-|------------|-------------|
-| View Settings | Access settings pages |
-| Edit Settings | Modify settings |
+Permissions control access to specific features
 
 ## Editing a Role
 
@@ -126,8 +67,6 @@ Permissions control access to specific features:
 3. Save
 
 A user can have one role at a time.
-
-[image_assign_role]
 
 ---
 

@@ -2,8 +2,6 @@
 
 Track and manage your parts inventory.
 
-[image_stock_management]
-
 ## Overview
 
 Stock management tracks the quantity of each part in your inventory. The system automatically adjusts stock when parts are used in repair orders.
@@ -21,8 +19,7 @@ Stock management tracks the quantity of each part in your inventory. The system 
 
 The parts list shows current stock for each part:
 - Green: Stock is healthy
-- Yellow: Stock is low (at or below threshold)
-- Red: Out of stock
+- Yellow: Stock is low (at or below threshold) 
 
 [image_parts_stock_status]
 
@@ -71,15 +68,6 @@ Each entry shows:
 - Notes
 
 [image_stock_history_tab]
-
-### Movement Types
-
-| Type | Description |
-|------|-------------|
-| **Initial** | Initial stock when part was created |
-| **Order** | Added to or removed from repair order |
-| **Cancelled** | Returned due to order cancellation |
-| **Manual** | Manual adjustment by staff |
 
 ## Backorder
 

@@ -1,8 +1,8 @@
-# Invoicing
+# Invoice
 
 Generate professional invoices from repair orders.
 
-[image_invoice_example]
+[image_invoice]
 
 ## Overview
 
@@ -15,13 +15,11 @@ RepairCore automatically generates invoices from repair orders. Invoices include
 3. PDF opens in a new tab
 4. Print or download
 
-[image_generate_invoice_button]
-
 ## Invoice Contents
 
 ### Header
 
-- Your company logo
+- Company logo
 - Company name and address
 - Company tax number
 - Invoice number and date
@@ -69,11 +67,19 @@ RepairCore automatically generates invoices from repair orders. Invoices include
 
 ## Invoice Number
 
-Invoice numbers are automatically generated based on:
-- Date prefix (YYYYMMDD)
-- Sequential number
+Invoice numbers are automatically generated:
+- Prefix: `INV`
+- Date: `YYYYMMDD`
+- Sequence: `0001`
 
-Example: `INV-20241211-0001`
+Example: `INV202412120001`
+
+## Status Requirements
+
+Invoices can be generated when order status is:
+- **Repairing** - Work in progress
+- **Completed** - Repair finished
+- **Delivered** - Device returned to customer
 
 ## Customizing Invoices
 
@@ -82,7 +88,7 @@ Invoice appearance is based on your settings:
 1. **Company Information** - Set in Settings > Company
 2. **Logo** - Upload in Settings > Company
 3. **Tax Numbers** - Set in Settings > Company
-4. **Warranty Terms** - Set in Settings > Company
+4. **Terms** - Set in Settings > Company
 
 ## Printing Invoices
 
@@ -90,12 +96,6 @@ Invoice appearance is based on your settings:
 2. Use browser's print function (Ctrl+P or Cmd+P)
 3. Select printer or save as PDF
 
-## Emailing Invoices
-
-1. Generate and download the invoice PDF
-2. Attach to email manually
-3. Send to customer
-
 ---
 
-Next: [Payments](payment-processing.md)
+Next: [Receipt](receipt.md)

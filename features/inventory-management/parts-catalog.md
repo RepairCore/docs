@@ -10,7 +10,7 @@ The parts catalog stores all parts and components you use for repairs. Each part
 
 ## Viewing Parts
 
-Navigate to **Admin > Inventory > Parts** to see all parts.
+Navigate to **Admin > Parts** to see all parts.
 
 ### List Features
 
@@ -19,16 +19,11 @@ Navigate to **Admin > Inventory > Parts** to see all parts.
 - **Sort** - Sort by name, price, stock level
 - **Bulk Actions** - Update status or delete multiple parts
 
-[image_parts_index]
-
 ## Creating a Part
 
-1. Navigate to **Admin > Inventory > Parts**
-2. Click **Create Part**
-3. Fill in part details
-4. Click **Save**
-
-[image_create_part]
+1. Navigate to **Admin > Parts**
+2. Fill in part details
+3. Click **Save**
 
 ### Part Fields
 
@@ -43,7 +38,7 @@ Navigate to **Admin > Inventory > Parts** to see all parts.
 | **Tax Class** | Tax applied to this part | No |
 | **Stock Quantity** | Current stock level | No |
 | **Low Stock Threshold** | Alert when stock falls below | No |
-| **Barcode** | Barcode/UPC code | No |
+| **Status** | Part status | No |
 | **Description** | Part description | No |
 
 ## Pricing
@@ -60,11 +55,10 @@ The price charged to customers when this part is used in a repair.
 
 Select the tax class to apply to this part. If not set, the default tax class for parts is used (configured in Settings > Tax).
 
-[image_part_pricing]
 
 ## Stock Management
 
-### Current Stock
+### Initial Stock
 
 The quantity currently available in your inventory.
 
@@ -76,10 +70,9 @@ When stock falls to or below this level, the part appears in low stock alerts.
 
 To manually adjust stock:
 1. Open part details
-2. Click **Adjust Stock**
-3. Enter adjustment amount (positive to add, negative to subtract)
-4. Enter reason for adjustment
-5. Click **Save**
+2. Enter adjustment amount (positive to add, negative to subtract)
+3. Enter reason for adjustment
+4. Click **Save**
 
 [image_stock_adjustment]
 
@@ -104,7 +97,7 @@ If backorder is enabled (in Settings > Inventory):
 View all stock movements for a part:
 
 1. Open part details
-2. Go to **Stock History** tab
+2. Go to **Stock History** section
 
 Shows:
 - Date and time

@@ -20,8 +20,6 @@ Configure currency display and financial settings for your repair shop.
 | **Thousand Separator** | Character for thousands (. or ,) |
 | **Decimal Places** | Number of decimal digits (0-4) |
 
-[image_currency_format_preview]
-
 ## Currency Format Examples
 
 | Settings | Result |
@@ -73,7 +71,6 @@ Choose how many decimal digits to display:
 2. Click **Save Settings**
 3. Changes apply immediately to all price displays
 
-[image_save_finance_settings]
 
 ---
 

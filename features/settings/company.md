@@ -21,7 +21,6 @@ Configure your company details that appear on documents and communications.
 | **Tax Number** | Tax registration number |
 | **Registration Number** | Business registration number |
 
-[image_company_details_form]
 
 ### Company Name
 
@@ -60,7 +59,6 @@ Upload your company logo for documents:
 - Recommended size: 200x80 pixels
 - Format: PNG with transparent background
 
-[image_company_logo_upload]
 
 ### Company Stamp
 
@@ -71,6 +69,8 @@ Upload your company stamp/seal (optional):
 
 ## Warranty Settings
 
+[image_warranty_settings]
+
 Configure default warranty information for repair orders.
 
 | Setting | Description |
@@ -79,7 +79,6 @@ Configure default warranty information for repair orders.
 | **Warranty Policy** | Your warranty policy text |
 | **Warranty Terms** | Detailed warranty terms and conditions |
 
-[image_warranty_settings]
 
 ### Default Warranty Period
 
@@ -107,8 +106,6 @@ Detailed terms and conditions. Include:
 1. Fill in all required fields
 2. Upload logo and stamp if needed
 3. Click **Save Settings**
-
-[image_save_company_settings]
 
 ---
 

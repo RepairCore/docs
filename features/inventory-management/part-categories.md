@@ -10,23 +10,20 @@ Part categories help organize your inventory. Categories can be nested (parent-c
 
 ## Viewing Categories
 
-Navigate to **Admin > Inventory > Part Categories** to see all categories.
-
-[image_part_categories_index]
+Navigate to **Admin > Parts > Part Categories** to see all categories.
 
 ## Creating a Category
 
-1. Navigate to **Admin > Inventory > Part Categories**
+1. Navigate to **Admin > Parts > Part Categories**
 2. Fill in the form on the left side
 3. Click **Save**
-
-[image_create_part_category]
 
 ### Category Fields
 
 | Field | Description | Required |
 |-------|-------------|----------|
 | **Name** | Category name | Yes |
+| **Slug** | Category slug | No |
 | **Parent** | Parent category (for nesting) | No |
 | **Description** | Category description | No |
 | **Status** | Active or Inactive | Yes |

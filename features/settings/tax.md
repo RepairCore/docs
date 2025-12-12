@@ -27,7 +27,6 @@ Set default tax classes that will be automatically applied:
 | **Default Tax for Parts** | Tax class applied to parts by default |
 | **Default Tax for Services** | Tax class applied to services by default |
 
-[image_default_tax_classes]
 
 ## Managing Tax Classes
 
@@ -42,7 +41,6 @@ The tax classes table shows:
 - **Type** - Inclusive or Exclusive
 - **Status** - Active or Inactive
 
-[image_tax_classes_list]
 
 ### Creating a Tax Class
 
@@ -69,16 +67,11 @@ The tax classes table shows:
 | **Calculation Method** | How tax is calculated |
 | **Rounding Mode** | How to round tax amounts |
 
-### Calculation Methods
-
-- **Per Item** - Tax calculated on each line item separately
-- **Subtotal** - Tax calculated on order subtotal
-
 ### Rounding Modes
 
 - **Round** - Standard rounding (0.5 rounds up)
-- **Ceiling** - Always round up
-- **Floor** - Always round down
+- **Round Up** - Always round up
+- **Round Down** - Always round down
 
 ### Editing a Tax Class
 

@@ -10,24 +10,20 @@ Part brands help identify manufacturers of your parts. Assign brands to parts fo
 
 ## Viewing Brands
 
-Navigate to **Admin > Inventory > Part Brands** to see all brands.
-
-[image_part_brands_index]
+Navigate to **Admin > Parts > Part Brands** to see all brands.
 
 ## Creating a Brand
 
-1. Navigate to **Admin > Inventory > Part Brands**
+1. Navigate to **Admin > Parts > Part Brands**
 2. Fill in the form on the left side
 3. Click **Save**
-
-[image_create_part_brand]
 
 ### Brand Fields
 
 | Field | Description | Required |
 |-------|-------------|----------|
 | **Name** | Brand name | Yes |
-| **Logo** | Brand logo image | No |
+| **Slug** | Brand slug | No |
 | **Website** | Brand website URL | No |
 | **Description** | Brand description | No |
 | **Status** | Active or Inactive | Yes |

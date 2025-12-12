@@ -12,8 +12,6 @@ Users are staff members who can log in to the admin panel. Each user has a role 
 
 Navigate to **Admin > Users** to see all users.
 
-[image_users_index]
-
 ### List Features
 
 - **Search** - Find by name or email

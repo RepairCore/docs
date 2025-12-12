@@ -16,8 +16,6 @@ Configure stock management and inventory behavior for your repair shop.
 | **Allow Backorder** | Allow adding parts to orders even when out of stock |
 | **Low Stock Threshold** | Default quantity level for low stock warnings |
 
-[image_inventory_settings_form]
-
 ## Allow Backorder
 
 When **enabled**:
@@ -49,7 +47,6 @@ Set the default quantity level that triggers low stock warnings.
 
 This default applies to new parts. Each part can have its own threshold.
 
-[image_low_stock_example]
 
 ## How Stock Works
 

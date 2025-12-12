@@ -21,8 +21,6 @@ Configure basic application settings for your repair shop.
 | **Date Format** | How dates are displayed |
 | **Time Format** | How times are displayed |
 
-[image_general_settings_form]
-
 ## Site Name & Description
 
 ### Site Name
@@ -50,8 +48,6 @@ Upload your business logo. Recommended:
 
 Click **Choose Image** to select from Media Library or upload new.
 
-[image_logo_upload]
-
 ### Site Favicon
 
 Upload a small icon for browser tabs. Recommended:
@@ -78,13 +74,6 @@ Common timezones:
 
 Choose how dates are displayed:
 
-| Format | Example |
-|--------|---------|
-| d/m/Y | 25/12/2024 |
-| m/d/Y | 12/25/2024 |
-| Y-m-d | 2024-12-25 |
-| d M Y | 25 Dec 2024 |
-
 ### Time Format
 
 Choose how times are displayed:
@@ -100,7 +89,6 @@ Choose how times are displayed:
 2. Click **Save Settings** button
 3. Changes apply immediately
 
-[image_save_general_settings]
 
 ---
 

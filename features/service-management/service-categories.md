@@ -12,15 +12,12 @@ Service categories help organize your service offerings. Categories can be neste
 
 Navigate to **Admin > Services > Categories** to see all categories.
 
-[image_service_categories_index]
 
 ## Creating a Category
 
 1. Navigate to **Admin > Services > Categories**
 2. Fill in the form on the left side
 3. Click **Save**
-
-[image_create_service_category]
 
 ### Category Fields
 

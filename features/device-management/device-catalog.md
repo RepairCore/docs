@@ -23,27 +23,22 @@ Navigate to **Admin > Devices** to see all devices.
 ### From Devices Page
 
 1. Navigate to **Admin > Devices**
-2. Click **Create Device**
+2. Click **Add Device**
 3. Select customer
 4. Fill in device details
 5. Click **Save**
 
 [image_create_device]
 
-### From Customer Profile
-
-1. Open customer profile
-2. Go to **Devices** tab
-3. Click **Add Device**
-4. Fill in device details
-5. Click **Save**
 
 ### From Repair Order
 
 1. When creating a repair order
-2. After selecting customer, click **Add New Device**
+2. Click **Quick Create**
 3. Fill in device details
 4. Device is created and selected
+
+[image_quick_create_device]
 
 ## Device Fields
 
@@ -53,23 +48,13 @@ Navigate to **Admin > Devices** to see all devices.
 | **Device Type** | Category (Phone, Laptop, Tablet, etc.) | Yes |
 | **Brand** | Manufacturer (Apple, Samsung, etc.) | No |
 | **Model** | Model name/number | No |
-| **Serial Number** | Device serial or IMEI | No |
-| **Color** | Device color | No |
-| **Purchase Date** | When customer bought device | No |
+| **Serial Number** | Device serial | No |
+| **IMEI** | Device IMEI | No |
+| **Condition** | Device condition | No |
+| **Accessories** | Device accessories | No |
+| **Password/Pattern** | Device password/pattern | No |
 | **Notes** | Additional notes | No |
-
-[image_device_form]
-
-## Device Types
-
-Common device types:
-- **Phone** - Mobile phones
-- **Tablet** - Tablets and iPads
-- **Laptop** - Laptops and notebooks
-- **Desktop** - Desktop computers
-- **Watch** - Smartwatches
-- **Console** - Gaming consoles
-- **Other** - Other devices
+| **Status** | Device status | No |
 
 ## Editing a Device
 
@@ -83,13 +68,6 @@ Common device types:
 Click a device to view its details:
 
 [image_device_detail]
-
-### Information
-
-- Device type, brand, model
-- Serial number
-- Customer information
-- Purchase date
 
 ### Repair History
 

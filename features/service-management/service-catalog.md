@@ -19,22 +19,18 @@ Navigate to **Admin > Services** to see all services.
 - **Sort** - Sort by name, price
 - **Bulk Actions** - Update status or delete multiple services
 
-[image_services_index]
-
 ## Creating a Service
 
 1. Navigate to **Admin > Services**
-2. Click **Create Service**
-3. Fill in service details
-4. Click **Save**
-
-[image_create_service]
+2. Fill in service details
+3. Click **Save**
 
 ### Service Fields
 
 | Field | Description | Required |
 |-------|-------------|----------|
 | **Name** | Service name | Yes |
+| **Code** | Service code | No |
 | **Category** | Service category | No |
 | **Price** | Service price | Yes |
 | **Tax Class** | Tax applied to this service | No |
@@ -51,8 +47,6 @@ The standard price for this service. Can be adjusted when adding to an order.
 ### Tax Class
 
 Select the tax class to apply. If not set, the default tax class for services is used (configured in Settings > Tax).
-
-[image_service_pricing]
 
 ## Editing a Service
 
@@ -76,8 +70,7 @@ When creating or editing a repair order:
 1. Go to **Parts & Services** tab
 2. Click **Add Service**
 3. Search for the service
-4. Adjust price if needed
-5. Service is added to the order
+4. Service is added to the order
 
 [image_add_service_to_order]
 
