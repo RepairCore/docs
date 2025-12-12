@@ -62,15 +62,3 @@
 * [Footer Settings](features/settings/footer.md)
 * [User Settings](features/settings/user.md)
 * [Languages](features/settings/languages.md)
-
-
-## Troubleshooting
-
-* [Common Issues](troubleshooting/common-issues.md)
-* [Error Messages](troubleshooting/error-messages.md)
-
-## Appendix
-
-* [FAQ](appendix/faq.md)
-* [Glossary](appendix/glossary.md)
-* [License](appendix/license.md)
