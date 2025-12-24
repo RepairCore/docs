@@ -1,6 +1,6 @@
 # RepairCore – Laravel Repair Shop Management System
 
-![RepairCore Logo](https://repaircore.org/project-logo300.png)
+![RepairCore Logo](https://repaircore.org/images/project-logo300.png)
 
 RepairCore is a **premium Laravel-based repair shop management system** designed to help businesses manage **jobs, customers, inventory, and invoices** in a single platform. This repository is for **document of the product**; the full source is available as a premium product at [RepairCore.org](https://repaircore.org).
 
