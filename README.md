@@ -1,10 +1,9 @@
-# RepairCore Documentation
+# RepairCore – Laravel Repair Shop Management System
 
-Welcome to the official documentation for **RepairCore** - a professional repair shop management system built with Laravel 12 and Livewire 3.
+![RepairCore Logo](https://repaircore.org/project-logo300.png)
 
-## What is RepairCore?
+RepairCore is a **premium Laravel-based repair shop management system** designed to help businesses manage **jobs, customers, inventory, and invoices** in a single platform. This repository is for **document of the product**; the full source is available as a premium product at [RepairCore.org](https://repaircore.org).
 
-RepairCore is an enterprise-grade repair shop management system designed to streamline operations from customer intake to final delivery. It features powerful automation, and comprehensive reporting capabilities.
 
 ## Key Features
 
@@ -25,15 +24,13 @@ RepairCore is an enterprise-grade repair shop management system designed to stre
 - **Database:** MySQL/PostgreSQL
 - **Build Tool:** Vite 7
 
-## Getting Started
+## 🔧 Quick Start
 
-New to RepairCore? Start with our [Installation Guide](getting-started/installation.md) to get up and running quickly.
+This repository is **not the full source**. To access the premium version, visit [RepairCore.org](https://repaircore.org).
 
+For demonstration purposes, you can view screenshots, workflow, and features directly on the website.
 
-## Need Help?
+## 🚀 Learn More
 
-- 📧 Email: contact@repaircore.org
-
----
-
-**Made with ❤️ for repair shop owners worldwide**
+- Official website: [https://repaircore.org](https://repaircore.org)
+- Documentation & support: [https://repaircore.org/docs](https://repaircore.org/docs)
